@@ -1,0 +1,15 @@
+<div class="title-main">
+221
+</div>
+
+<div class="text">
+Silnice vypadá jako rovná černá čára v&nbsp;přízračné červené krajině. Z&nbsp;písku pouště sálají vlny horka a&nbsp;klimatizace v&nbsp;tvém autě hlasitě vrčí, když se snaží udržet vnitřek dostatečně chladný. V&nbsp;rádiu se ozývá jen monotónní praskání statické elektřiny. Sešlápneš plyn až k&nbsp;podlaze a&nbsp;uháníš dál divokou krajinou. V&nbsp;dálce před sebou vidíš stoupat k&nbsp;obloze chuchvalce černého kouře. Zpomalíš a&nbsp;zastavíš u&nbsp;hořícího auta. Je to starý sporťák z&nbsp;minulého století, Corvetta s&nbsp;motorem V8 o&nbsp;výkonu 200 koňských sil. Jeho život náhle skončil v&nbsp;kouli plamenů. Nedaleko hořícího vraku stojí, opřená o&nbsp;balvan, plavovlasá žena v&nbsp;černé kombinéze a&nbsp;s&nbsp;brokovnicí v&nbsp;ruce. Když zahlédne blížící se Interceptor, vyběhne na silnici a&nbsp;mává na tebe. Zastavíš před ní a&nbsp;připravíš si revolver pro případ, že by se chtěla Interceptoru zmocnit. Zeptáš se jí, kam má namířeno. &bdquo;Na jih, kam až to půjde. Nic jiného nepotřebuji - pokud ovšem taky nepatříš k&nbsp;tomu gangu jezdců-zabijáků, co na mě zaútočili,&ldquo; odpoví. Řekneš jí, že jsi na cestě do San Anglo, a&nbsp;nabídneš jí svezení. &bdquo;San Anglo!&ldquo; vyhrkne. &bdquo;Ty musíš být ten člověk z&nbsp;New Hope, na kterého čekáme!&ldquo; Nasedne do auta a&nbsp;představí se ti - jmenuje se Amber. Řekne ti, že všechny hlídkové vozy dostaly zprávu, aby pátraly po Interceptoru, ale že se musela ujistit, zda jsi skutečně ten, za koho se vydáváš. Řekne ti také, že se situace zkomplikovala. Poslední dva dny je San Anglo terčem neustálých útoků velkého gangu jezdců-zabijáků, známých jako Pekelní psi; vede je muž, kterému říkají Zvíře. Byli to Pekelní psi, kdo na ni před necelou hodinou zaútočil. Mají v&nbsp;úmyslu vyvraždit obyvatele San Anglo, aby se dostali k&nbsp;jejich zásobám benzínu. Nyní je zcela nemožné dostat se ze San Anglo nebo dovnitř bez střetnutí s&nbsp;jejich silně vyzbrojenými auty a&nbsp;motorkami. Je jen jediná možnost - proniknout v&nbsp;noci do jejich tábora a&nbsp;poškodit jejich vozidla. Odhodlání v&nbsp;jejích očích tě přesvědší, že jiná možnost neexistuje, a&nbsp;tak souhlasíš, že jí pomůžeš. Vzrušeně přejede rukou po palubní desce a&nbsp;požádá tě, aby ses rozjel co nejrychleji na jih. O&nbsp;půl hodiny později ti Amber řekne, abys zastavil. V&nbsp;dálce vidíš stoupat do vzduchu kouř. &bdquo;Rafinérie San Anglo,&ldquo; řekne hrdě. &bdquo;Radši zemřeme, než abychom dovolili té chátře ukrást náš benzín. Sjeď ze silnice doleva. Za hodinu bude tma a&nbsp;pak se musíme vydat do rábora Pekelných psů.&ldquo; <i>Zkus své štěstí.</i> Pokud máš štěstí, otoč na <b>7</b>. Máš-li smůlu, otoč na <b>331</b>.
+</div>
+
+<?php
+include 'fortune-link.php';
+?>
+
+<?php
+include 'post.php';
+?>

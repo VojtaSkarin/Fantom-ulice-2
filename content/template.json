@@ -1,0 +1,29 @@
+{
+	"title_main": null,
+	"title_middle": [],
+	"death_case": "pre akce způsobila smrt, toto je její důvod"
+	"story": [
+		seznam odstavců
+	],
+	"options": [{
+		"node": "1",
+		"description": "popis"
+	}],
+	"image": "image-path.jpg",
+	"show_hud": true;
+	"stats": [
+		"combat_skill": { "value": 0, "mode": 0 },
+		"stamina": { "value": 0, "mode": 0 },
+		"luck": { "value": 0, "mode": 0 },
+		"firepower": { "value": 0, "mode": 0 },
+		"armour": { "value": 0, "mode": 0 },
+		"rockets": { "value": 0, "mode": 0 },
+		"nails": { "value": 0, "mode": 0 },
+		"oil": { "value": 0, "mode": 0 },
+		"items": { "value": 0, "mode": 0 },
+	],
+	"fortune-options": {
+		luck: number,
+		misfortune: number,
+	},
+}

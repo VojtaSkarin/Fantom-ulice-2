@@ -1,0 +1,199 @@
+html {
+	--page-width: 24rem;
+	--font-size: 20;
+	font-size: var(--font-size);
+}
+
+div.title-main-1 {
+	text-align: center;
+	margin: auto;
+	margin-top: 0.5rem;
+	margin-bottom: 0.075rem;
+	font-size: 110%;
+	max-width: var(--page-width);
+}
+
+div.title-main-2 {
+	text-align: center;
+	margin: auto;
+	font-size: 170%;
+	max-width: var(--page-width);
+}
+
+div.title-main-3 {
+	text-align: center;
+	margin: auto;
+	margin-bottom: 1rem;
+	font-size: 80%;
+	max-width: var(--page-width);
+}
+
+div.title-main {
+	text-align: center;
+	margin: auto;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+	font-size: 150%;
+	max-width: var(--page-width);
+}
+
+div.title-middle {
+	text-align: center;
+	margin: auto;
+	max-width: var(--page-width);
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+div.title-middle-greater {
+	text-align: center;
+	margin: auto;
+	max-width: var(--page-width);
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-size: 110%;
+}
+
+div.title-justify {
+	text-align: justify;
+	margin: auto;
+	max-width: var(--page-width);
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-size: 110%;
+}
+
+div.text {
+	max-width: var(--page-width);
+	margin: auto;
+	margin-bottom: 1rem;
+	text-align: justify;
+}
+
+div.note {
+	max-width: var(--page-width);
+	margin: auto;
+	margin-top: 1rem;
+	text-align: justify;
+	font-size: 75%;
+}
+
+div.text-choice {
+	max-width: var(--page-width);
+	margin: auto;
+	margin-top: 0.75rem;
+	text-align: justify;
+}
+
+div.link {
+	max-width: var(--page-width);
+	margin: auto;
+	margin-bottom: 0.25rem;
+}
+
+div.stats {
+	max-width: var(--page-width);
+	margin: auto;
+	margin-top: 2rem;
+}
+
+table.header {
+	width: var(--page-width);
+	margin: auto;
+	font-size: var(--font-size);
+	text-align: center;
+	margin-bottom: 1rem;
+	border: 1px solid;
+}
+
+table.enemies {
+	table-layout: fixed;
+	width: var(--page-width);
+	margin: auto;
+	font-size: var(--font-size);
+	margin-bottom: 1rem;
+}
+
+table.target-choice {
+	width: var(--page-width);
+	margin: auto;
+	font-size: var(--font-size);
+	text-align: center;
+}
+
+td.align-center {
+	text-align: center;
+}
+
+td.align-center-shift-stamina {
+	text-align: center;
+	position: relative;
+	left: 1.6rem;
+}
+
+td.align-center-shift-pancir {
+	text-align: center;
+	position: relative;
+	left: 2rem;
+}
+
+td.align-right {
+	text-align: right;
+}
+
+img.fullsize {
+	max-width: var(--page-width);
+	max-height: auto;
+	display: block;
+	margin: auto;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+img.medkit {
+	width: 3ch;
+	margin: 0.1rem;
+	position: relative;
+	top: 0.4rem;
+}
+
+img.credit {
+	width: 1.5rem;
+	position: relative;
+	top: 0.4rem;
+	left: 0.25rem;
+}
+
+img.rocket {
+	width: 1.5rem;
+	position: relative;
+	top: 0.45rem;
+}
+
+img.nails {
+	width: 1.5rem;
+	position: relative;
+	top: 0.4rem;
+}
+
+img.oil {
+	width: 1.5rem;
+	position: relative;
+	top: 0.6rem;
+	margin-left: 0.1rem;
+}
+
+img.wheel {
+	width: 1.5rem;
+	position: relative;
+	top: 0.45rem;
+	margin-left: 0.1rem;
+}
+
+img.canister {
+	width: 1.5rem;
+	position: relative;
+	top: 0.3rem;
+	margin-left: 0.1rem;
+}

@@ -1,0 +1,21 @@
+{
+	"title_main": null,
+	"title_middle": ["<i>Věnováno Ronniemu</i>"],
+	"story": [],
+	"options": [{
+		"node": "intro-1",
+		"description": "<i>Další stránka</i>"
+	}],
+	"image": "intro-image.png",
+	"show_hud": false,
+	"stats": [
+		{ "value": 0, "mode": 1 },
+		{ "value": 0, "mode": 1 },
+		{ "value": 0, "mode": 1 },
+		{ "value": 0, "mode": 1 },
+		{ "value": 0, "mode": 1 },
+		{ "value": 0, "mode": 1 },
+		{ "value": 0, "mode": 1 },
+		{ "value": 0, "mode": 1 }
+	]
+}
