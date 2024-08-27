@@ -52,6 +52,14 @@
         "oil": {
             "mode": 2,
             "value": 2
+        },
+        "wheels": {
+            "mode": 2,
+            "value": 2
+        },
+        "fuel": {
+            "mode": 2,
+            "value": 1
         }
     },
     "notes": []

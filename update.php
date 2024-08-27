@@ -67,5 +67,11 @@ function add_content($object) {
 	if (! property_exists($object->stats, 'fuel')) {
 		$object->stats->fuel = $stat;
 	}
+	
+	if (! property_exists($object->stats, 'equipment') {
+		$object->stats->equipment = new stdClass();
+		$object->stats->equipment->mode = 1;
+		$object->stats->equipment->content = array();
+	}
 }
 ?>

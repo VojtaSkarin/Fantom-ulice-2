@@ -95,7 +95,7 @@ div.link {
 div.stat-block {
 	max-width: var(--page-width);
 	margin: auto;
-	margin-top: 2rem;
+	margin-top: 1rem;
 }
 
 div.stat {

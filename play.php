@@ -11,10 +11,18 @@ session_start();
 
 // Constants
 // Mode of stat change
-enum Mode: int {
+enum StatMode: int {
 	case Initialize = 1;
 	case Set = 2;
 	case Change = 3;
+}
+
+// Mode of equipment change
+enum EquipMode : int {
+	case Nothing = 1;
+	case Add = 2;
+	case Remove = 3;
+	case Empty = 4;
 }
 
 // Stats
@@ -28,6 +36,8 @@ define('ARMOUR', 'Armour');
 define('ROCKETS', 'Rockets');
 define('NAILS', 'Nails');
 define('OIL', 'Oil');
+define('WHEELS', 'Wheels');
+define('FUEL', 'Fuel');
 
 define('STATS', array(COMBAT_SKILL, STAMINA, LUCK, MED_KIT, CREDITS, FIREPOWER, ARMOUR, ROCKETS, NAILS, OIL));
 
@@ -95,6 +105,16 @@ if (! $_SESSION['executed'] || true) {
 	update_stat($_SESSION['stats'][ROCKETS], $data->stats->rockets);
 	update_stat($_SESSION['stats'][NAILS], $data->stats->nails);
 	update_stat($_SESSION['stats'][OIL], $data->stats->oil);
+	update_stat($_SESSION['stats'][WHEELS], $data->stats->wheels);
+	update_stat($_SESSION['stats'][FUEL], $data->stats->fuel);
+	
+	if ($data->stats->equipment->mode == EquipMode::Add->value) {
+		$_SESSION['stats'][EQUIPMENT] = array_merge($_SESSION['stats'][$QUIPMENT], Łdata->stats->equipment->content);
+	} else if ($data->stats->equipment->mode == EquipMode::Remove->value) {
+		$_SESSION['stats'][EQUIPMENT] = array_diff($_SESSION['stats'][EQUIPMENT], $data->stats->equipment->content);
+	} else if ($data->stats->equipment->mode == EquipMode::Empty->value) {
+		$_SESSION['stats'][EQUIPMENT] = array();
+	}
 }
 
 /* Render page*/
@@ -224,7 +244,6 @@ if ($data->show_hud) {
 	for ($i = 0; $i < $nails; $i++) {
 		echo '<img class="nails" src="images/nails.png">';
 	}
-
 	echo "\n</div>\n\n";
 
 	// Oil
@@ -234,66 +253,66 @@ if ($data->show_hud) {
 	for ($i = 0; $i < $oil; $i++) {
 		echo '<img class="oil" src="images/oil.png">';
 	}
-
 	echo "\n</div>\n\n";
 
 	// Wheels
-$kola = $_SESSION['kola'];
+	echo "<div class=\"stat\">\n";
+	$wheels = $_SESSION['stats'][WHEELS][ACT];
+	echo 'REZERVNÍ KOLA: ';
+	for ($i = 0; $i < $wheels; $i++) {
+		echo '<img class="wheel" src="images/wheel.png">';
+	}
+	echo "</div>\n\n";
 
-echo 'REZERVNÍ KOLA: ';
+	// Fuel
+	echo "<div class=\"stat\">\n";
+	$fuel = $_SESSION['stats'][FUEL][ACT];
+	echo 'PALIVO: ';
+	for ($i = 0; $i < $fuel; $i++) {
+		echo '<img class="canister" src="images/canister.png">';
+	}
+	echo "\n</div>\n";
+	
+	echo "</div>\n\n";
+	
+	echo "<div class=\"stat-block\">\n";
 
-for ($i = 0; $i < $kola; $i++) {
-	echo '<img class="wheel" src="images/wheel.png">';
-}
+	// Equipment
+	echo "<div class=\"stat\">\n";
+	echo 'VYBAVENÍ: ';
+	$equipment = $_SESSION['equipment'];
 
-echo "<br>\n";
+	foreach ($equipment as $i => $item) {
+		if ($item[0] == '_') {
+			continue;
+		}
+	
+		if ($i > 0) {
+			echo ', ';
+		}
+	
+		echo $item;
+	}
 
-$palivo = $_SESSION['palivo'];
-
-echo 'PALIVO: ';
-
-for ($i = 0; $i < $palivo; $i++) {
-	echo '<img class="canister" src="images/canister.png">';
-}
-
-echo "<br><br>\n";
-
-echo 'VYBAVENÍ: ';
-
-$vybaveni = $_SESSION['vybaveni'];
-
-$i = 0;
-foreach ($vybaveni as $predmet) {
-	if ($predmet[0] == '_') {
-		continue;
+	if (count($equipment) == 0) {
+		echo 'žádné';
 	}
 	
-	if ($i > 0) {
-		echo ', ';
-	}
-	
-	echo $predmet;
-	$i++;
-}
-
-if (count($vybaveni) == 0) {
-	echo 'žádné';
-}
-	
+	echo "</div>\n";
 	echo "</div>\n\n";
 }
 
 // Helper functions
 function update_stat(&$stat, $data, $throws = -1, $shift = -1) {
-	if ($data->mode == Mode::Initialize->value) {
+	if ($data->mode == StatMode::Initialize->value) {
 		$value = 0;
 		for ($i = 0; $i < $throws; $i++) {
 			$value += rand(1, 6);
 		}
 		$stat[ACT] = $stat[MAX] = $value + $shift;
-	} else if ($data->mode == Mode::Set->value) {
+	} else if ($data->mode == StatMode::Set->value) {
 		$stat[ACT] = $data->value;
-	} else if ($data->mode == Mode::Change->value) {
+	} else if ($data->mode == StatMode::Change->value) {
 		if ($data->value > 0) {
 			$stat[ACT] = min($stat[MAX], $stat[ACT] + $data->value);
 		} else {

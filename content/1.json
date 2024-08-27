@@ -55,6 +55,14 @@
         "oil": {
             "mode": 3,
             "value": 0
+        },
+        "wheels": {
+            "mode": 3,
+            "value": 0
+        },
+        "fuel": {
+            "mode": 3,
+            "value": 0
         }
     },
     "show_hud": true,
