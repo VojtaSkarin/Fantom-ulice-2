@@ -1,19 +1,66 @@
 {
-	"title_main": "2",
-	"title_middle": [],
-	"death_case": "Hadí jed tě usmrtil.",
-	"story": [
-		"Běžíš k autu a rychle otevřeš balíček léků z Med-Kitu. Píchneš si sérum proti uštknutí a obvážeš si ránu. Nicméně použití Med-Kitu tentokrát nezvýší tvou STAMINU, pouze zabrání jedu, aby tě usmrtil. Zanedlouho se vzpamatuješ, ale jsi zesláblý po přestálém utrpení. Ztrácíš 1 bod UMĚNÍ BOJE a 2 body STAMINY. Vrátíš se k převrácenému Interceptoru a hada zastřelíš. V přihrádce na rukavice najdeš stočenou několikametrovou plastikovou hadici a vezmeš si ji s sebou. Když se znovu rozjedeš k jihu, stále cítíš bolestivé škubání v paži (otoč na <b>13</b>)."
-	],
-	"image": null,
-	"pre_modificator_permanent": {
-		"stamina": -2,
-		"combat_skill": -1,
-		"acquired_items": ["HOSE"]
-	},
-	"options": [{
-		"node": "13",
-		"description": "Otočit na <b>13</b>"
-	}]
+    "title_main": "2",
+    "title_middle": [],
+    "death_case": "Hadí jed tě usmrtil.",
+    "story": [
+        "Běžíš k autu a rychle otevřeš balíček léků z Med-Kitu. Píchneš si sérum proti uštknutí a obvážeš si ránu. Nicméně použití Med-Kitu tentokrát nezvýší tvou STAMINU, pouze zabrání jedu, aby tě usmrtil. Zanedlouho se vzpamatuješ, ale jsi zesláblý po přestálém utrpení. Ztrácíš 1 bod UMĚNÍ BOJE a 2 body STAMINY. Vrátíš se k převrácenému Interceptoru a hada zastřelíš. V přihrádce na rukavice najdeš stočenou několikametrovou plastikovou hadici a vezmeš si ji s sebou. Když se znovu rozjedeš k jihu, stále cítíš bolestivé škubání v paži (otoč na <b>13</b>)."
+    ],
+    "image": null,
+    "pre_modificator_permanent": {
+        "stamina": -2,
+        "combat_skill": -1,
+        "acquired_items": [
+            "HOSE"
+        ]
+    },
+    "options": [
+        {
+            "node": "13",
+            "description": "Otočit na <b>13</b>"
+        }
+    ],
+    "stats": {
+        "combat_skill": {
+            "mode": 3,
+            "value": 0
+        },
+        "stamina": {
+            "mode": 3,
+            "value": 0
+        },
+        "luck": {
+            "mode": 3,
+            "value": 0
+        },
+        "med_kit": {
+            "mode": 3,
+            "value": 0
+        },
+        "credits": {
+            "mode": 3,
+            "value": 0
+        },
+        "firepower": {
+            "mode": 3,
+            "value": 0
+        },
+        "armour": {
+            "mode": 3,
+            "value": 0
+        },
+        "rockets": {
+            "mode": 3,
+            "value": 0
+        },
+        "nails": {
+            "mode": 3,
+            "value": 0
+        },
+        "oil": {
+            "mode": 3,
+            "value": 0
+        }
+    },
+    "show_hud": false,
+    "notes": []
 }
-	

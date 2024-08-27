@@ -1,21 +1,58 @@
 {
-	"title_main": null,
-	"title_middle": ["<i>Věnováno Ronniemu</i>"],
-	"story": [],
-	"options": [{
-		"node": "intro-1",
-		"description": "<i>Další stránka</i>"
-	}],
-	"image": "intro-image.png",
-	"show_hud": false,
-	"stats": [
-		{ "value": 0, "mode": 1 },
-		{ "value": 0, "mode": 1 },
-		{ "value": 0, "mode": 1 },
-		{ "value": 0, "mode": 1 },
-		{ "value": 0, "mode": 1 },
-		{ "value": 0, "mode": 1 },
-		{ "value": 0, "mode": 1 },
-		{ "value": 0, "mode": 1 }
-	]
+    "title_main": null,
+    "title_middle": [
+        "<i>Věnováno Ronniemu</i>"
+    ],
+    "story": [],
+    "options": [
+        {
+            "node": "intro-1",
+            "description": "<i>Další stránka</i>"
+        }
+    ],
+    "image": "intro-image.png",
+    "show_hud": true,
+    "stats": {
+        "combat_skill": {
+            "mode": 1,
+            "value": 0
+        },
+        "stamina": {
+            "mode": 1,
+            "value": 0
+        },
+        "luck": {
+            "mode": 1,
+            "value": 0
+        },
+        "med_kit": {
+            "mode": 2,
+            "value": 10
+        },
+        "credits": {
+            "mode": 2,
+            "value": 200
+        },
+        "firepower": {
+            "mode": 1,
+            "value": 0
+        },
+        "armour": {
+            "mode": 1,
+            "value": 0
+        },
+        "rockets": {
+            "mode": 2,
+            "value": 4
+        },
+        "nails": {
+            "mode": 2,
+            "value": 3
+        },
+        "oil": {
+            "mode": 2,
+            "value": 2
+        }
+    },
+    "notes": []
 }

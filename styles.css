@@ -92,10 +92,13 @@ div.link {
 	margin-bottom: 0.25rem;
 }
 
-div.stats {
+div.stat-block {
 	max-width: var(--page-width);
 	margin: auto;
 	margin-top: 2rem;
+}
+
+div.stat {
 }
 
 table.header {
