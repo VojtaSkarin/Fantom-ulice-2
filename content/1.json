@@ -63,6 +63,10 @@
         "fuel": {
             "mode": 3,
             "value": 0
+        },
+        "equipment": {
+            "mode": 1,
+            "content": []
         }
     },
     "show_hud": true,

@@ -1,68 +1,68 @@
 {
-    "title_main": null,
-    "title_middle": [
-        "<i>Věnováno Ronniemu</i>"
-    ],
-    "story": [],
+    "title_main": "219",
+    "title_middle": [],
+    "story": [
+		"Rychle mu řekneš, že jsi jeho ženu a&nbsp;syna nezabil. <i>Zkus své štěstí.</i> Pokud máš štěstí, otoč na <b>288</b>. Máš-li smůlu, otoč na <b>236</b>."
+	],
     "options": [
         {
             "node": "intro-1",
             "description": "<i>Další stránka</i>"
         }
     ],
-    "image": "intro-image.png",
+    "image": null,
     "show_hud": false,
     "stats": {
         "combat_skill": {
-            "mode": 1,
+            "mode": 3,
             "value": 0
         },
         "stamina": {
-            "mode": 1,
+            "mode": 3,
             "value": 0
         },
         "luck": {
-            "mode": 1,
+            "mode": 3,
             "value": 0
         },
         "med_kit": {
-            "mode": 2,
-            "value": 10
+            "mode": 3,
+            "value": 0
         },
         "credits": {
-            "mode": 2,
-            "value": 200
+            "mode": 3,
+            "value": 0
         },
         "firepower": {
-            "mode": 1,
+            "mode": 3,
             "value": 0
         },
         "armour": {
-            "mode": 1,
+            "mode": 3,
             "value": 0
         },
         "rockets": {
-            "mode": 2,
-            "value": 4
+            "mode": 3,
+            "value": 0
         },
         "nails": {
-            "mode": 2,
-            "value": 3
+            "mode": 3,
+            "value": 0
         },
         "oil": {
-            "mode": 2,
-            "value": 2
+            "mode": 3,
+            "value": 0
         },
         "wheels": {
-            "mode": 2,
-            "value": 2
+            "mode": 3,
+            "value": 0
         },
         "fuel": {
-            "mode": 2,
-            "value": 1
+            "mode": 3,
+            "value": 0
         },
         "equipment": {
-            "mode": 4,
+            "mode": 1,
             "content": []
         }
     },

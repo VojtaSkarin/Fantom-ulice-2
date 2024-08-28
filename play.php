@@ -38,6 +38,7 @@ define('NAILS', 'Nails');
 define('OIL', 'Oil');
 define('WHEELS', 'Wheels');
 define('FUEL', 'Fuel');
+define('EQUIPMENT', 'Equipment');
 
 define('STATS', array(COMBAT_SKILL, STAMINA, LUCK, MED_KIT, CREDITS, FIREPOWER, ARMOUR, ROCKETS, NAILS, OIL));
 
@@ -91,7 +92,7 @@ if (array_key_exists('action', $_GET)) {
 }
 
 // Modify stats
-if (! $_SESSION['executed'] || true) {
+if (! $_SESSION['executed'] ) {
 	$_SESSION['executed'] = true;
 
 	// Stats
@@ -146,11 +147,15 @@ if (! empty($data->image)) {
 }
 
 // Option links
+echo "<div class=\"link-block\">\n";
+
 foreach($data->options as $i => $option) {
 	echo "<div class=\"link\">\n";
 	echo "<a href=\"play.php?action=".($i + 1)."&node=".$_SESSION['node']."\">".$option->description."</a>\n";
 	echo "</div>\n\n";
 }
+
+echo "</div>\n\n";
 
 // Note
 foreach ($data->notes as $note) {
@@ -161,8 +166,6 @@ foreach ($data->notes as $note) {
 
 // HUD
 if ($data->show_hud) {
-	print_r($_SESSION['stats']);
-	
 	echo "<div class=\"stat-block\">\n";
 	
 	// Combat skill
@@ -182,7 +185,7 @@ if ($data->show_hud) {
 	// Luck
 	echo "<div class=\"stat\">\n";
 	$lm = $_SESSION['stats'][LUCK][MAX];
-	$la = $_SESSION['stats'][LUCK][MAX];
+	$la = $_SESSION['stats'][LUCK][ACT];
 	echo 'ŠTĚSTÍ: ' . $la . '/' . $lm . "\n";
 	echo "</div>\n";
 	
@@ -262,7 +265,7 @@ if ($data->show_hud) {
 	for ($i = 0; $i < $wheels; $i++) {
 		echo '<img class="wheel" src="images/wheel.png">';
 	}
-	echo "</div>\n\n";
+	echo "\n</div>\n\n";
 
 	// Fuel
 	echo "<div class=\"stat\">\n";
@@ -280,7 +283,7 @@ if ($data->show_hud) {
 	// Equipment
 	echo "<div class=\"stat\">\n";
 	echo 'VYBAVENÍ: ';
-	$equipment = $_SESSION['equipment'];
+	$equipment = $_SESSION['stats'][EQUIPMENT];
 
 	foreach ($equipment as $i => $item) {
 		if ($item[0] == '_') {
@@ -298,12 +301,12 @@ if ($data->show_hud) {
 		echo 'žádné';
 	}
 	
-	echo "</div>\n";
+	echo "\n</div>\n";
 	echo "</div>\n\n";
 }
 
 // Helper functions
-function update_stat(&$stat, $data, $throws = -1, $shift = -1) {
+function update_stat(&$stat, $data, $throws=0, $shift=0) {
 	if ($data->mode == StatMode::Initialize->value) {
 		$value = 0;
 		for ($i = 0; $i < $throws; $i++) {

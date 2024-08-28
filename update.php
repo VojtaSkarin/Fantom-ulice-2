@@ -68,7 +68,7 @@ function add_content($object) {
 		$object->stats->fuel = $stat;
 	}
 	
-	if (! property_exists($object->stats, 'equipment') {
+	if (! property_exists($object->stats, 'equipment')) {
 		$object->stats->equipment = new stdClass();
 		$object->stats->equipment->mode = 1;
 		$object->stats->equipment->content = array();
