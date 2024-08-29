@@ -2,16 +2,14 @@
     "title_main": "219",
     "title_middle": [],
     "story": [
-		"Rychle mu řekneš, že jsi jeho ženu a&nbsp;syna nezabil. <i>Zkus své štěstí.</i> Pokud máš štěstí, otoč na <b>288</b>. Máš-li smůlu, otoč na <b>236</b>."
-	],
-    "options": [
-        {
-            "node": "intro-1",
-            "description": "<i>Další stránka</i>"
-        }
+        "Rychle mu řekneš, že jsi jeho ženu a&nbsp;syna nezabil. <i>Zkus své štěstí.</i> Pokud máš štěstí, otoč na <b>288</b>. Máš-li smůlu, otoč na <b>236</b>."
     ],
+    "options": [{
+		"node": "luck",
+		"description": "MARK_LUCK"
+	}],
     "image": null,
-    "show_hud": false,
+    "show_hud": true,
     "stats": {
         "combat_skill": {
             "mode": 3,
@@ -66,5 +64,6 @@
             "content": []
         }
     },
-    "notes": []
+    "notes": [],
+    "options_luck": ["288", "236"]
 }

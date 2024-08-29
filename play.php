@@ -55,16 +55,6 @@ define("ITEMS", array(
 if (empty($_SESSION['node'])) {
 	$_SESSION['node'] = 'intro';
 	$_SESSION['executed'] = false;
-	$_SESSION['stats'] = array();
-}
-
-// Parse JSON data
-$file_content = file_get_contents("content/".$_SESSION['node'].".json");
-$sanitized = str_replace(["\r\n", "\t"], '', $file_content);
-try {
-	$data = json_decode($sanitized, null, 512, JSON_THROW_ON_ERROR);
-} catch (Exception $e) {
-	echo $e->getMessage();
 }
 
 // Remove from release
@@ -76,29 +66,58 @@ if (array_key_exists('goto', $_GET)) {
 
 // Process player's commands
 if (array_key_exists('action', $_GET)) {
+	$valid = true;
+	$action = intval($_GET['action']) - 1;
+	
 	if ($_GET['action'] == 'new-game') {
 		$_SESSION['node'] = 'intro';
-		$_SESSION['executed'] = false;
+	} else if ($action >= 0 && $action < count($_SESSION['options'])) {
+		$_SESSION['node'] = $_SESSION['options'][$action]->node;
 	} else {
-		$action = intval($_GET['action']) -1;
-
-		if ($action != -1 && $action < count($data->options)) {
-			$_SESSION['node'] = $data->options[$action]->node;
-			$_SESSION['executed'] = false;
-		}
+		$valid = false;
 	}
 	
-	header('Location: play.php');
+	if ($valid) {
+		$_SESSION['executed'] = false;
+	}
 }
 
-// Modify stats
-if (! $_SESSION['executed'] ) {
+// Parse JSON data
+$file_content = file_get_contents("content/".$_SESSION['node'].".json");
+$sanitized = str_replace(["\r\n", "\t"], '', $file_content);
+try {
+	$data = json_decode($sanitized, null, 512, JSON_THROW_ON_ERROR);
+} catch (Exception $e) {
+	echo $e->getMessage();
+}
+
+// JSON is loaded AFTER command processing
+if ($_SESSION['node'] != 'luck') {
+	$_SESSION['options'] = $data->options;
+	$_SESSION['options_luck'] = $data->options_luck;
+}
+
+// On first loading actions
+if (! $_SESSION['executed']) {
 	$_SESSION['executed'] = true;
+	
+	// Luck
+	if ($_SESSION['node'] == 'luck') {
+		$_SESSION['throw'] = rand(1, 6) + rand(1, 6);
+		$_SESSION['luck'] = $_SESSION['throw'] <= $_SESSION['stats'][LUCK][ACT];
+		$_SESSION['options'] = $_SESSION['options_luck'];
+	}
 
 	// Stats
 	update_stat($_SESSION['stats'][COMBAT_SKILL], $data->stats->combat_skill, 1, 6);
 	update_stat($_SESSION['stats'][STAMINA], $data->stats->stamina, 2, 24);
+	echo $_SESSION['stats'][LUCK][ACT];
+	error_log($_SESSION['node']."\n", 3, "C:/xampp/htdocs/Fantom-ulice-2/php.log");
+	error_log($_SESSION['stats'][LUCK][ACT]."\n", 3, "C:/xampp/htdocs/Fantom-ulice-2/php.log");
+	error_log(json_encode($data->stats->luck)."\n", 3, "C:/xampp/htdocs/Fantom-ulice-2/php.log");
 	update_stat($_SESSION['stats'][LUCK], $data->stats->luck, 1, 6);
+	error_log($_SESSION['stats'][LUCK][ACT]."\n", 3, "C:/xampp/htdocs/Fantom-ulice-2/php.log");
+	echo $_SESSION['stats'][LUCK][ACT];
 	update_stat($_SESSION['stats'][MED_KIT], $data->stats->med_kit);
 	update_stat($_SESSION['stats'][CREDITS], $data->stats->credits);
 	update_stat($_SESSION['stats'][FIREPOWER], $data->stats->firepower, 1, 6);
@@ -109,6 +128,7 @@ if (! $_SESSION['executed'] ) {
 	update_stat($_SESSION['stats'][WHEELS], $data->stats->wheels);
 	update_stat($_SESSION['stats'][FUEL], $data->stats->fuel);
 	
+	// Equipment
 	if ($data->stats->equipment->mode == EquipMode::Add->value) {
 		$_SESSION['stats'][EQUIPMENT] = array_merge($_SESSION['stats'][$QUIPMENT], Łdata->stats->equipment->content);
 	} else if ($data->stats->equipment->mode == EquipMode::Remove->value) {
@@ -116,6 +136,8 @@ if (! $_SESSION['executed'] ) {
 	} else if ($data->stats->equipment->mode == EquipMode::Empty->value) {
 		$_SESSION['stats'][EQUIPMENT] = array();
 	}
+	
+	header('Location: play.php');
 }
 
 /* Render page*/
@@ -134,6 +156,17 @@ foreach ($data->title_middle as $title) {
 	echo "</div>\n\n";
 }
 
+// Luck
+if ($_SESSION['node'] == 'luck') {
+	echo "<div class=\"text\">\n";
+	echo "Výsledek hodu: " . $_SESSION['throw'] . "\n";
+	echo "</div>\n\n";
+	
+	echo "<div class=\"text\">\n";
+	echo ($_SESSION['luck'] ? "Máš štěstí." : "Máš smůlu.") . "\n";
+	echo "</div>\n\n";
+}
+
 // Story
 foreach ($data->story as $paragraph) {
 	echo "<div class=\"text\">\n";
@@ -147,11 +180,29 @@ if (! empty($data->image)) {
 }
 
 // Option links
+define('MARK', 'MARK');
+define('MARK_TURN', 'MARK_TURN');
+define('OPTION_MARKS', array(
+	'MARK_LUCK' => '<i>Zkusit štěstí</i>',
+	'MARK_CONTINUE' => 'Pokračovat',
+	'MARK_NEXT' => '<i>Další stránka</i>'
+	));
+
 echo "<div class=\"link-block\">\n";
 
 foreach($data->options as $i => $option) {
+	if (str_starts_with($option->description, MARK)) {
+		if ($option->description == MARK_TURN) {
+			$description = "Otočit na <b>" . $option->node . "</b>";
+		} else {
+			$description = OPTION_MARKS[$option->description];
+		}
+	} else {
+		$description = $option->description;
+	}
+	
 	echo "<div class=\"link\">\n";
-	echo "<a href=\"play.php?action=".($i + 1)."&node=".$_SESSION['node']."\">".$option->description."</a>\n";
+	echo "<a href=\"play.php?action=".($i + 1)."&node=".$_SESSION['node']."\">".$description."</a>\n";
 	echo "</div>\n\n";
 }
 

@@ -32,6 +32,11 @@ function add_content($object) {
 		$object->notes = array();
 	}
 	
+	// luck
+	if (! property_exists($object, 'options_luck')) {
+		$object->options_luck = array();
+	}
+	
 	// Show HUD
 	if (! property_exists($object, 'show_hud')) {
 		$object->show_hud = false;

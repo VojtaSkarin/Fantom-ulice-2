@@ -70,5 +70,6 @@
         }
     },
     "show_hud": true,
-    "notes": []
+    "notes": [],
+    "options_luck": []
 }

@@ -12,7 +12,7 @@
     "options": [
         {
             "node": "intro-3",
-            "description": "<i>Další stránka</i>"
+            "description": "MARK_NEXT"
         }
     ],
     "stats": {
@@ -70,5 +70,6 @@
         }
     },
     "show_hud": false,
-    "notes": []
+    "notes": [],
+    "options_luck": []
 }

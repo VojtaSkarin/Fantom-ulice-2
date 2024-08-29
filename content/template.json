@@ -2,14 +2,16 @@
     "title_main": null,
     "title_middle": [],
     "story": [],
+    "notes": [],
     "options": [
         {
             "node": "intro-1",
             "description": "<i>Další stránka</i>"
         }
     ],
+    "options_luck": [],
     "image": null,
-    "show_hud": false,
+    "show_hud": true,
     "stats": {
         "combat_skill": {
             "mode": 3,
@@ -63,6 +65,5 @@
             "mode": 1,
             "content": []
         }
-    },
-    "notes": []
+    }
 }
