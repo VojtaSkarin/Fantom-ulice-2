@@ -26,15 +26,20 @@ foreach (scandir($path) as $file) {
 	}
 }
 
-function add_content($object) {
+function add_content(&$object) {
 	// Note
 	if (! property_exists($object, 'notes')) {
 		$object->notes = array();
 	}
 	
-	// luck
+	// Luck
 	if (! property_exists($object, 'options_luck')) {
 		$object->options_luck = array();
+	}
+	
+	// Fight skill
+	if (! property_exists($object, 'options_fight_skill')) {
+		$object->options_fight_skill = array();
 	}
 	
 	// Show HUD

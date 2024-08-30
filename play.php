@@ -184,6 +184,17 @@ if ($_SESSION['node'] == 'luck') {
 	echo "</div>\n\n";
 }
 
+// Fight skill
+if ($_SESSION['node'] == 'fight_skill') {
+	echo "<div class=\"text\">\n";
+	echo "Výsledek hodu: " . $_SESSION['throw'] . "\n";
+	echo "</div>\n\n";
+	
+	echo "<div class=\"text\">\n";
+	echo ($_SESSION['fight_skill'] ? "Zvládl jsi zareagovat." : "Nezvládl jsi zareagovat.") . "\n";
+	echo "</div>\n\n";
+}
+
 // Story
 foreach ($data->story as $paragraph) {
 	echo "<div class=\"text\">\n";
@@ -202,6 +213,7 @@ define('MARK_TURN', 'MARK_TURN');
 define('OPTION_MARKS', array(
 	'MARK_LUCK' => '<i>Zkusit štěstí</i>',
 	'MARK_FIGHT_SKILL' => '<i>Otestovat své schopnosti</i>',
+	'MARK_SHOWDOWN' => '<i>Poměřit síly</i>',
 	'MARK_CONTINUE' => 'Pokračovat',
 	'MARK_NEXT' => '<i>Další stránka</i>'
 	));

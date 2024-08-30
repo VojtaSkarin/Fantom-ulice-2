@@ -2,8 +2,8 @@
     "title_main": "333",
     "title_middle": [],
     "story": [
-		"Hoď dvěma kostkami. Pokud je výsledek menší nebo roven tvému UMĚNÍ BOJE, otoč na <b>57</b>. Pokud je výsledek větší než tvé UMĚNÍ BOJE, otoč na <b>86</b>."
-		],
+        "Hoď dvěma kostkami. Pokud je výsledek menší nebo roven tvému UMĚNÍ BOJE, otoč na <b>57</b>. Pokud je výsledek větší než tvé UMĚNÍ BOJE, otoč na <b>86</b>."
+    ],
     "notes": [],
     "options": [
         {
@@ -12,13 +12,10 @@
         }
     ],
     "options_luck": [],
+    "options_fight_skill": [57, 86],
     "image": null,
     "show_hud": true,
     "stats": {
-        "combat_skill": {
-            "mode": 3,
-            "value": 0
-        },
         "stamina": {
             "mode": 3,
             "value": 0
@@ -66,6 +63,10 @@
         "equipment": {
             "mode": 1,
             "content": []
+        },
+        "fight_skill": {
+            "mode": 3,
+            "value": 0
         }
     }
 }

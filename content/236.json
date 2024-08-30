@@ -2,8 +2,8 @@
     "title_main": "236",
     "title_middle": [],
     "story": [
-		"Muž se na tebe podívá, odplivne si a&nbsp;vzkřikne: &bdquo;Povídám tas, ty špinavý vrahu!&ldquo; Nemáš na výběr, musíš ho poslechnout (otoč na <b>333</b>)."
-		],
+        "Muž se na tebe podívá, odplivne si a&nbsp;vzkřikne: &bdquo;Povídám tas, ty špinavý vrahu!&ldquo; Nemáš na výběr, musíš ho poslechnout (otoč na <b>333</b>)."
+    ],
     "notes": [],
     "options": [
         {
@@ -15,10 +15,6 @@
     "image": null,
     "show_hud": true,
     "stats": {
-        "combat_skill": {
-            "mode": 3,
-            "value": 0
-        },
         "stamina": {
             "mode": 3,
             "value": 0
@@ -66,6 +62,11 @@
         "equipment": {
             "mode": 1,
             "content": []
+        },
+        "fight_skill": {
+            "mode": 3,
+            "value": 0
         }
-    }
+    },
+    "options_fight_skill": []
 }

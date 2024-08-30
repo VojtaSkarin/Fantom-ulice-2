@@ -2,8 +2,8 @@
     "title_main": "288",
     "title_middle": [],
     "story": [
-		"Muž si tě dlouho pozorně prohlíží a&nbsp;pak řekne: &bdquo;OK, věřím ti, ale řekni mi víc.&ldquo; Vysvětlíš mu, že nejsi ten, kdo zabil jeho ženu a&nbsp;syna, a&nbsp;že ses pouze vydával za jezdce-zabijáka, abys udržel polohu New Hope v&nbsp;tajnosti pro případ, že by on měl v&nbsp;úmyslu podniknout na ně nájezd. Muž se zatváří vzrušeně a&nbsp;říká: &bdquo;Povídáš New Hope? Zrovna tam mířím. Jsem na cestě tím směrem od doby, kdy mě přepadli. Jen jsem se tu zastavil, abych si v&nbsp;supermarketu vzal nějaké konzervy s&nbsp;jídlem, a&nbsp;vrhlo se na mě pár zdivočelých psů. Jednoho jsem zastřelil a&nbsp;ostatní utekli. Jmenuji se Johnson a&nbsp;omlouvám se za to vyhrožování před chvílí, ale v&nbsp;těchhle dnech se nedá nikomu věřit.&ldquo; Skloní zbraň a&nbsp;napřáhne ruku k&nbsp;pozdravu. Usměješ se a&nbsp;potřesete si rukama. Řekne ti, že je vyučený stavbař, a&nbsp;ptá se, jak daleko je do New Hope a&nbsp;jestli má naději, že tam bude moci zůstat. Odpovíš, že je to asi patnáct kilometrů a&nbsp;že jeho šance jsou slušné, protože schopných lidí je stále třeba. Také mu vyprávíš o&nbsp;svém úkolu a&nbsp;on tě varuje, abys nezastavoval u&nbsp;Joeovy pumpy, která je asi osm kilometrů za městem. &bdquo;Nemají tam žádný benzín. Jen olupují lidi, kteří tam zastaví.&ldquo; Poděkuješ Johnsonovi za radu, popřeješ mu hodně štěstí a&nbsp;jdeš zpátky ke svému Interceptoru. Otočíš klíčkem, motor zaburácí a&nbsp;ty se znovu vydáš na cestu (otoč na <b>34</b>)."
-		],
+        "Muž si tě dlouho pozorně prohlíží a&nbsp;pak řekne: &bdquo;OK, věřím ti, ale řekni mi víc.&ldquo; Vysvětlíš mu, že nejsi ten, kdo zabil jeho ženu a&nbsp;syna, a&nbsp;že ses pouze vydával za jezdce-zabijáka, abys udržel polohu New Hope v&nbsp;tajnosti pro případ, že by on měl v&nbsp;úmyslu podniknout na ně nájezd. Muž se zatváří vzrušeně a&nbsp;říká: &bdquo;Povídáš New Hope? Zrovna tam mířím. Jsem na cestě tím směrem od doby, kdy mě přepadli. Jen jsem se tu zastavil, abych si v&nbsp;supermarketu vzal nějaké konzervy s&nbsp;jídlem, a&nbsp;vrhlo se na mě pár zdivočelých psů. Jednoho jsem zastřelil a&nbsp;ostatní utekli. Jmenuji se Johnson a&nbsp;omlouvám se za to vyhrožování před chvílí, ale v&nbsp;těchhle dnech se nedá nikomu věřit.&ldquo; Skloní zbraň a&nbsp;napřáhne ruku k&nbsp;pozdravu. Usměješ se a&nbsp;potřesete si rukama. Řekne ti, že je vyučený stavbař, a&nbsp;ptá se, jak daleko je do New Hope a&nbsp;jestli má naději, že tam bude moci zůstat. Odpovíš, že je to asi patnáct kilometrů a&nbsp;že jeho šance jsou slušné, protože schopných lidí je stále třeba. Také mu vyprávíš o&nbsp;svém úkolu a&nbsp;on tě varuje, abys nezastavoval u&nbsp;Joeovy pumpy, která je asi osm kilometrů za městem. &bdquo;Nemají tam žádný benzín. Jen olupují lidi, kteří tam zastaví.&ldquo; Poděkuješ Johnsonovi za radu, popřeješ mu hodně štěstí a&nbsp;jdeš zpátky ke svému Interceptoru. Otočíš klíčkem, motor zaburácí a&nbsp;ty se znovu vydáš na cestu (otoč na <b>34</b>)."
+    ],
     "notes": [],
     "options": [
         {
@@ -15,10 +15,6 @@
     "image": null,
     "show_hud": true,
     "stats": {
-        "combat_skill": {
-            "mode": 3,
-            "value": 0
-        },
         "stamina": {
             "mode": 3,
             "value": 0
@@ -66,6 +62,11 @@
         "equipment": {
             "mode": 1,
             "content": []
+        },
+        "fight_skill": {
+            "mode": 3,
+            "value": 0
         }
-    }
+    },
+    "options_fight_skill": []
 }

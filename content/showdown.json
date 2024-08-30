@@ -1,22 +1,23 @@
 {
-    "title_main": "126",
+    "title_main": "Měření sil",
     "title_middle": [],
-    "story": [
-        "Přeběhneš ulici, přitiskneš se ke zdi domu a&nbsp;napůl očekáváš, že zazní další výstřel. Srdce ti bije jako splašené, když se pomalu plížíš k&nbsp;rohu budovy a&nbsp;rozhlížíš se kolem. V&nbsp;úzké uličce nikoho nevidíš. Pokročíš za roh, když tu se ozve hlas: &bdquo;OK, tak to by stačilo. Ještě krok a&nbsp;je z&nbsp;tebe cedník. Odkud jsi?&ldquo; Pokud odpovíš, že jsi z&nbsp;New Hope, otoč na <b>274</b>. Odpovíš-li, že jsi osamělý jezdec-zabiják, který nemá stálý domov, otoč na <b>155</b>."
-    ],
+    "story": [],
+    "notes": [],
     "options": [
         {
-            "node": "274",
-            "description": "Mluvit pravdu"
-        },
-        {
-            "node": "155",
-            "description": "Vydávat se za jezdce-zabijáka"
+            "node": "intro-1",
+            "description": "<i>Další stránka</i>"
         }
     ],
+    "options_luck": [],
+    "options_fight_skill": [],
     "image": null,
     "show_hud": true,
     "stats": {
+        "fight_skill": {
+            "mode": 3,
+            "value": 0
+        },
         "stamina": {
             "mode": 3,
             "value": 0
@@ -64,13 +65,6 @@
         "equipment": {
             "mode": 1,
             "content": []
-        },
-        "fight_skill": {
-            "mode": 3,
-            "value": 0
         }
-    },
-    "notes": [],
-    "options_luck": [],
-    "options_fight_skill": []
+    }
 }

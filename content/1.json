@@ -16,10 +16,6 @@
         }
     ],
     "stats": {
-        "combat_skill": {
-            "mode": 3,
-            "value": 0
-        },
         "stamina": {
             "mode": 3,
             "value": 0
@@ -67,9 +63,14 @@
         "equipment": {
             "mode": 1,
             "content": []
+        },
+        "fight_skill": {
+            "mode": 3,
+            "value": 0
         }
     },
     "show_hud": true,
     "notes": [],
-    "options_luck": []
+    "options_luck": [],
+    "options_fight_skill": []
 }
