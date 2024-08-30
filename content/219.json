@@ -8,6 +8,7 @@
 		"node": "luck",
 		"description": "MARK_LUCK"
 	}],
+    "options_luck": ["288", "236"],
     "image": null,
     "show_hud": true,
     "stats": {
@@ -64,6 +65,5 @@
             "content": []
         }
     },
-    "notes": [],
-    "options_luck": ["288", "236"]
+    "notes": []
 }

@@ -26,7 +26,7 @@ enum EquipMode : int {
 }
 
 // Stats
-define('COMBAT_SKILL', 'Combat_Skill');
+define('FIGHT_SKILL', 'Combat_Skill');
 define('STAMINA', 'Stamina');
 define('LUCK', 'Luck');
 define('MED_KIT', 'Med_Kit');
@@ -40,7 +40,9 @@ define('WHEELS', 'Wheels');
 define('FUEL', 'Fuel');
 define('EQUIPMENT', 'Equipment');
 
-define('STATS', array(COMBAT_SKILL, STAMINA, LUCK, MED_KIT, CREDITS, FIREPOWER, ARMOUR, ROCKETS, NAILS, OIL));
+define('STATS', array(FIGHT_SKILL, STAMINA, LUCK, MED_KIT, CREDITS, FIREPOWER, ARMOUR, ROCKETS, NAILS, OIL));
+
+define('BOOL_TO_INDEX', array(true => 0, false => 1));
 
 // Type of stat
 define('MAX', 'maximum');
@@ -68,11 +70,17 @@ if (array_key_exists('goto', $_GET)) {
 if (array_key_exists('action', $_GET)) {
 	$valid = true;
 	$action = intval($_GET['action']) - 1;
-	
+
 	if ($_GET['action'] == 'new-game') {
 		$_SESSION['node'] = 'intro';
 	} else if ($action >= 0 && $action < count($_SESSION['options'])) {
-		$_SESSION['node'] = $_SESSION['options'][$action]->node;
+		if ($_SESSION['node'] == 'luck') {
+			$_SESSION['node'] = $_SESSION['options_luck'][BOOL_TO_INDEX[$_SESSION['luck']]];
+		} else if ($_SESSION['node'] == 'fight_skill') {
+			$_SESSION['node'] = $_SESSION['options_fight_skill'][BOOL_TO_INDEX[$_SESSION['fight_skill']]];
+		} else {
+			$_SESSION['node'] = $_SESSION['options'][$action]->node;
+		}
 	} else {
 		$valid = false;
 	}
@@ -91,10 +99,13 @@ try {
 	echo $e->getMessage();
 }
 
+define('CHECKS', array('luck', 'fight_skill'));
+
 // JSON is loaded AFTER command processing
-if ($_SESSION['node'] != 'luck') {
+if (! in_array($_SESSION['node'], CHECKS) && $data != null) {
 	$_SESSION['options'] = $data->options;
 	$_SESSION['options_luck'] = $data->options_luck;
+	$_SESSION['options_fight_skill'] = $data->options_fight_skill;
 }
 
 // On first loading actions
@@ -107,9 +118,15 @@ if (! $_SESSION['executed']) {
 		$_SESSION['luck'] = $_SESSION['throw'] <= $_SESSION['stats'][LUCK][ACT];
 		$_SESSION['options'] = $_SESSION['options_luck'];
 	}
+	
+	// Fight skill
+	if ($_SESSION['node'] == 'fight_skill') {
+		$_SESSION['throw'] = rand(1, 6) + rand(1, 6);
+		$_SESSION['fight_skill'] = $_SESSION['throw'] <= $_SESSION['stats'][FIGHT_SKILL][ACT];
+	}
 
 	// Stats
-	update_stat($_SESSION['stats'][COMBAT_SKILL], $data->stats->combat_skill, 1, 6);
+	update_stat($_SESSION['stats'][FIGHT_SKILL], $data->stats->fight_skill, 1, 6);
 	update_stat($_SESSION['stats'][STAMINA], $data->stats->stamina, 2, 24);
 	echo $_SESSION['stats'][LUCK][ACT];
 	error_log($_SESSION['node']."\n", 3, "C:/xampp/htdocs/Fantom-ulice-2/php.log");
@@ -184,6 +201,7 @@ define('MARK', 'MARK');
 define('MARK_TURN', 'MARK_TURN');
 define('OPTION_MARKS', array(
 	'MARK_LUCK' => '<i>Zkusit štěstí</i>',
+	'MARK_FIGHT_SKILL' => '<i>Otestovat své schopnosti</i>',
 	'MARK_CONTINUE' => 'Pokračovat',
 	'MARK_NEXT' => '<i>Další stránka</i>'
 	));
@@ -221,8 +239,8 @@ if ($data->show_hud) {
 	
 	// Combat skill
 	echo "<div class=\"stat\">\n";
-	$csm = $_SESSION['stats'][COMBAT_SKILL][MAX];
-	$csa = $_SESSION['stats'][COMBAT_SKILL][ACT];
+	$csm = $_SESSION['stats'][FIGHT_SKILL][MAX];
+	$csa = $_SESSION['stats'][FIGHT_SKILL][ACT];
 	echo 'UMĚNÍ BOJE: ' . $csm . '/' . $csa . "\n";
 	echo "</div>\n\n";
 

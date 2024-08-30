@@ -1,14 +1,14 @@
 {
-    "title_main": "236",
+    "title_main": "333",
     "title_middle": [],
     "story": [
-		"Muž se na tebe podívá, odplivne si a&nbsp;vzkřikne: &bdquo;Povídám tas, ty špinavý vrahu!&ldquo; Nemáš na výběr, musíš ho poslechnout (otoč na <b>333</b>)."
+		"Hoď dvěma kostkami. Pokud je výsledek menší nebo roven tvému UMĚNÍ BOJE, otoč na <b>57</b>. Pokud je výsledek větší než tvé UMĚNÍ BOJE, otoč na <b>86</b>."
 		],
     "notes": [],
     "options": [
         {
-            "node": "333",
-            "description": "MARK_TURN"
+            "node": "fight_skill",
+            "description": "MARK_FIGHT_SKILL"
         }
     ],
     "options_luck": [],
