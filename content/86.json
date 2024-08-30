@@ -29,84 +29,84 @@
     "show_hud": true,
     "stats": {
         "fight_skill": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "stamina": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "luck": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "med_kit": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "credits": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "firepower": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "armour": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "rockets": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "nails": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "oil": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "wheels": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "fuel": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0

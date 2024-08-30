@@ -16,6 +16,7 @@
     "notes": [
         "1. V českém překladu \"<i>21. června 2022</i>\". Jedná se o chybu, anglický originál zní \"<i>The morning of 21 July 2022 had started [...]</i>\"."
     ],
+    "show_hud": false,
     "options": [
         {
             "node": "intro-2",
@@ -24,77 +25,77 @@
     ],
     "stats": {
         "stamina": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "luck": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "med_kit": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "credits": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "firepower": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "armour": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "rockets": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "nails": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "oil": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "wheels": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         },
         "fuel": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
@@ -105,14 +106,13 @@
             "content": []
         },
         "fight_skill": {
-            "mode": "modify",
+            "mode": "add",
             "value": [
                 0,
                 0
             ]
         }
     },
-    "show_hud": false,
     "options_luck": [],
     "options_fight_skill": []
 }

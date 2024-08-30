@@ -11,9 +11,11 @@ session_start();
 
 // Constants
 // Mode of stat change
+define('NOTHING', 'nothing');
 define('INITIALIZE', 'initialize');
 define('SET', 'set');
-define('MODIFY', 'modify');
+define('ADD', 'add');
+define('SUBSTRACT', 'substract');
 
 // Mode of equipment change
 enum EquipMode : int {
@@ -150,9 +152,9 @@ if (! $_SESSION['executed']) {
 		$_SESSION['stats'][EQUIPMENT] = array();
 	}
 	
-	header('Location: play.php');
+	//header('Location: play.php');
 }
-
+print_r($_SESSION['stats']);
 /* Render page*/
 // Header
 //echo $_SESSION['node'];
@@ -216,7 +218,7 @@ if ($_SESSION['stats'][STAMINA][ACT] > 0 && $_SESSION['stats'][ARMOUR][ACT] > 0)
 }
 
 // Image
-if (! empty($data->image)) {
+if ($data->image != null) {
 	echo "<img class=\"fullsize\" src=\"images/".$data->image."\">\n\n";
 }
 
@@ -401,6 +403,10 @@ if ($data->show_hud) {
 
 // Helper functions
 function update_stat(&$stat, $data) {
+	if ($data->mode == NOTHING) {
+		return;
+	}
+	
 	$value = 0;
 	for ($i = 0; $i < $data->value[THROWS]; $i++) {
 		$value += rand(1, 6);
@@ -409,18 +415,12 @@ function update_stat(&$stat, $data) {
 	
 	if ($data->mode == INITIALIZE) {
 		$stat[MAX] = $stat[ACT] = $value;
-	}
-	
-	if ($data->mode == SET) {
+	} else if ($data->mode == SET) {
 		$stat[ACT] = $value;
-	}
-	
-	if ($data->mode == MODIFY) {
-		if ($value > 0) {
-			$stat[ACT] = min($stat[MAX], $stat[ACT] + $value);
-		} else {
-			$stat[ACT] = max(0, $stat[ACT] + $value);
-		}
+	} else if ($data->mode == ADD) {
+		$stat[ACT] = min($stat[MAX], $stat[ACT] + $value);
+	} else if ($data->mode == SUBSTRACT) {
+		$stat[ACT] = max(0, $stat[ACT] + $value);
 	}
 }
 

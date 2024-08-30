@@ -15,7 +15,7 @@
         }
     ],
     "image": "intro-image.png",
-    "show_hud": false,
+    "show_hud": true,
     "stats": {
         "fight_skill": {
             "mode": "initialize",
