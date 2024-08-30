@@ -27,6 +27,7 @@
     "options_fight_skill": [],
     "image": null,
     "show_hud": true,
+    "life": "nothing",
     "stats": {
         "fight_skill": {
             "mode": "add",

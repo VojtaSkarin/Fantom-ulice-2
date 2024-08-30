@@ -16,6 +16,7 @@
     ],
     "image": "intro-image.png",
     "show_hud": false,
+    "life": "revive",
     "stats": {
         "fight_skill": {
             "mode": "initialize",

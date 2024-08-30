@@ -52,7 +52,7 @@ function add_content(&$object) {
 	}
 	
 	// Kill or revive
-	if (! property_exists($object, 'life') {
+	if (! property_exists($object, 'life')) {
 		$object->life = 'nothing';
 	}
 	

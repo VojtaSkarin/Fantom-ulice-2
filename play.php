@@ -55,6 +55,9 @@ define('SHIFT', 1);
 define('BOUNDED', true);
 define('UNBOUNDED', false);
 
+define('KILL', 'kill');
+define('REVIVE', 'revive');
+
 // Others
 define("ITEMS", array(
 	"HOSE" => "plastiková hadice",
@@ -80,7 +83,7 @@ if (array_key_exists('action', $_GET)) {
 
 	if ($_GET['action'] == 'new-game') {
 		$_SESSION['node'] = 'intro';
-	} else if ($action >= 0 && $action < count($_SESSION['options'])) {
+	} else if ($action >= 0 && $action < count($_SESSION['options']) && $_SESSION['alive']) {
 		if ($_SESSION['node'] == 'luck') {
 			$_SESSION['node'] = $_SESSION['options_luck'][BOOL_TO_INDEX[$_SESSION['luck']]];
 		} else if ($_SESSION['node'] == 'fight_skill') {
@@ -155,7 +158,14 @@ if (! $_SESSION['executed']) {
 		$_SESSION['stats'][EQUIPMENT] = array();
 	}
 	
-	$_SESSION['alive'] = $_SESSION[STAMINA][ACT] > 0 && $_SESSION['stats'][ARMOUR][ACT] > 0;
+	// Check death condition
+	$_SESSION['alive'] = $_SESSION['stats'][STAMINA][ACT] > 0 && $_SESSION['stats'][ARMOUR][ACT] > 0;
+	echo $_SESSION['alive'];
+	if ($data->life == KILL) {
+		$_SESSION['alive'] = false;
+	} else if ($data->life == REVIVE) {
+		$_SESSION['alive'] = true;
+	}
 	
 	header('Location: play.php');
 }

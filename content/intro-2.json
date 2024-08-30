@@ -113,5 +113,6 @@
     "notes": [],
     "options_luck": [],
     "options_fight_skill": [],
-    "image": null
+    "image": null,
+    "life": "nothing"
 }

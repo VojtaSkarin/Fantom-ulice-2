@@ -116,5 +116,6 @@
     "show_hud": false,
     "notes": [],
     "options_luck": [],
-    "options_fight_skill": []
+    "options_fight_skill": [],
+    "life": "nothing"
 }
