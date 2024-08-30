@@ -18,56 +18,92 @@
     "show_hud": true,
     "stats": {
         "stamina": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "luck": {
-            "mode": 3,
-            "value": -1
+            "mode": "modify",
+            "value": [
+                0,
+                -1
+            ]
         },
         "med_kit": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "credits": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "firepower": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "armour": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "rockets": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "nails": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "oil": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "wheels": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "fuel": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         },
         "equipment": {
             "mode": 1,
             "content": []
         },
         "fight_skill": {
-            "mode": 3,
-            "value": 0
+            "mode": "modify",
+            "value": [
+                0,
+                0
+            ]
         }
     },
     "options_fight_skill": []

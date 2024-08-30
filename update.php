@@ -18,11 +18,28 @@ foreach (scandir($path) as $file) {
 		
 		// Update
 		add_content($data);
-
+		abc($data->stats->fight_skill->mode);
+		abc($data->stats->stamina->mode);
+		abc($data->stats->luck->mode);
+		abc($data->stats->med_kit->mode);
+		abc($data->stats->credits->mode);
+		abc($data->stats->firepower->mode);
+		abc($data->stats->armour->mode);
+		abc($data->stats->rockets->mode);
+		abc($data->stats->nails->mode);
+		abc($data->stats->oil->mode);
+		abc($data->stats->wheels->mode);
+		abc($data->stats->fuel->mode);
 		// Encode
 		$encoded = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 		echo $encoded;
 		file_put_contents($filename, $encoded);
+	}
+}
+
+function abc(&$value) {
+	if ($value == 'modify') {
+		$value = 'add';
 	}
 }
 

@@ -11,10 +11,9 @@ session_start();
 
 // Constants
 // Mode of stat change
-enum StatMode: int {
-	case Set = 2;
-	case Change = 3;
-}
+define('INITIALIZE', 'initialize');
+define('SET', 'set');
+define('MODIFY', 'modify');
 
 // Mode of equipment change
 enum EquipMode : int {
@@ -46,6 +45,10 @@ define('BOOL_TO_INDEX', array(true => 0, false => 1));
 // Type of stat
 define('MAX', 'maximum');
 define('ACT', 'actual');
+
+// Type of value
+define('THROWS', 0);
+define('SHIFT', 1);
 
 // Others
 define("ITEMS", array(
@@ -125,19 +128,13 @@ if (! $_SESSION['executed']) {
 	}
 
 	// Stats
-	update_stat($_SESSION['stats'][FIGHT_SKILL], $data->stats->fight_skill, 1, 6);
-	update_stat($_SESSION['stats'][STAMINA], $data->stats->stamina, 2, 24);
-	echo $_SESSION['stats'][LUCK][ACT];
-	error_log($_SESSION['node']."\n", 3, "C:/xampp/htdocs/Fantom-ulice-2/php.log");
-	error_log($_SESSION['stats'][LUCK][ACT]."\n", 3, "C:/xampp/htdocs/Fantom-ulice-2/php.log");
-	error_log(json_encode($data->stats->luck)."\n", 3, "C:/xampp/htdocs/Fantom-ulice-2/php.log");
-	update_stat($_SESSION['stats'][LUCK], $data->stats->luck, 1, 6);
-	error_log($_SESSION['stats'][LUCK][ACT]."\n", 3, "C:/xampp/htdocs/Fantom-ulice-2/php.log");
-	echo $_SESSION['stats'][LUCK][ACT];
+	update_stat($_SESSION['stats'][FIGHT_SKILL], $data->stats->fight_skill);
+	update_stat($_SESSION['stats'][STAMINA], $data->stats->stamina);
+	update_stat($_SESSION['stats'][LUCK], $data->stats->luck);
 	update_stat($_SESSION['stats'][MED_KIT], $data->stats->med_kit);
 	update_stat($_SESSION['stats'][CREDITS], $data->stats->credits);
-	update_stat($_SESSION['stats'][FIREPOWER], $data->stats->firepower, 1, 6);
-	update_stat($_SESSION['stats'][ARMOUR], $data->stats->armour, 2, 24);
+	update_stat($_SESSION['stats'][FIREPOWER], $data->stats->firepower);
+	update_stat($_SESSION['stats'][ARMOUR], $data->stats->armour);
 	update_stat($_SESSION['stats'][ROCKETS], $data->stats->rockets);
 	update_stat($_SESSION['stats'][NAILS], $data->stats->nails);
 	update_stat($_SESSION['stats'][OIL], $data->stats->oil);
@@ -403,20 +400,26 @@ if ($data->show_hud) {
 }
 
 // Helper functions
-function update_stat(&$stat, $data, $throws=0, $shift=0) {
-	if ($data->mode == StatMode::Initialize->value) {
-		$value = 0;
-		for ($i = 0; $i < $throws; $i++) {
-			$value += rand(1, 6);
-		}
-		$stat[ACT] = $stat[MAX] = $value + $shift;
-	} else if ($data->mode == StatMode::Set->value) {
-		$stat[ACT] = $data->value;
-	} else if ($data->mode == StatMode::Change->value) {
-		if ($data->value > 0) {
-			$stat[ACT] = min($stat[MAX], $stat[ACT] + $data->value);
+function update_stat(&$stat, $data) {
+	$value = 0;
+	for ($i = 0; $i < $data->value[THROWS]; $i++) {
+		$value += rand(1, 6);
+	}
+	$value += $data->value[SHIFT];
+	
+	if ($data->mode == INITIALIZE) {
+		$stat[MAX] = $stat[ACT] = $value;
+	}
+	
+	if ($data->mode == SET) {
+		$stat[ACT] = $value;
+	}
+	
+	if ($data->mode == MODIFY) {
+		if ($value > 0) {
+			$stat[ACT] = min($stat[MAX], $stat[ACT] + $value);
 		} else {
-			$stat[ACT] = max(0, $stat[ACT] + $data->value);
+			$stat[ACT] = max(0, $stat[ACT] + $value);
 		}
 	}
 }
