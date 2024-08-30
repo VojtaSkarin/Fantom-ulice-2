@@ -1,7 +1,11 @@
 {
     "title_main": null,
     "title_middle": [],
-    "story": [],
+    "story": {
+        "always": [],
+        "survived": [],
+        "died": []
+    },
     "notes": [],
     "options": [
         {

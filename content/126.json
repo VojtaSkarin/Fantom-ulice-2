@@ -1,9 +1,13 @@
 {
     "title_main": "126",
     "title_middle": [],
-    "story": [
-        "Přeběhneš ulici, přitiskneš se ke zdi domu a&nbsp;napůl očekáváš, že zazní další výstřel. Srdce ti bije jako splašené, když se pomalu plížíš k&nbsp;rohu budovy a&nbsp;rozhlížíš se kolem. V&nbsp;úzké uličce nikoho nevidíš. Pokročíš za roh, když tu se ozve hlas: &bdquo;OK, tak to by stačilo. Ještě krok a&nbsp;je z&nbsp;tebe cedník. Odkud jsi?&ldquo; Pokud odpovíš, že jsi z&nbsp;New Hope, otoč na <b>274</b>. Odpovíš-li, že jsi osamělý jezdec-zabiják, který nemá stálý domov, otoč na <b>155</b>."
-    ],
+    "story": {
+        "always": [
+            "Přeběhneš ulici, přitiskneš se ke zdi domu a&nbsp;napůl očekáváš, že zazní další výstřel. Srdce ti bije jako splašené, když se pomalu plížíš k&nbsp;rohu budovy a&nbsp;rozhlížíš se kolem. V&nbsp;úzké uličce nikoho nevidíš. Pokročíš za roh, když tu se ozve hlas: &bdquo;OK, tak to by stačilo. Ještě krok a&nbsp;je z&nbsp;tebe cedník. Odkud jsi?&ldquo; Pokud odpovíš, že jsi z&nbsp;New Hope, otoč na <b>274</b>. Odpovíš-li, že jsi osamělý jezdec-zabiják, který nemá stálý domov, otoč na <b>155</b>."
+        ],
+        "survived": [],
+        "died": []
+    },
     "options": [
         {
             "node": "274",

@@ -12,7 +12,6 @@ session_start();
 // Constants
 // Mode of stat change
 enum StatMode: int {
-	case Initialize = 1;
 	case Set = 2;
 	case Change = 3;
 }
@@ -196,10 +195,27 @@ if ($_SESSION['node'] == 'fight_skill') {
 }
 
 // Story
-foreach ($data->story as $paragraph) {
+// Always
+foreach ($data->story->always as $paragraph) {
 	echo "<div class=\"text\">\n";
 	echo $paragraph."\n";
 	echo "</div>\n\n";
+}
+
+if ($_SESSION['stats'][STAMINA][ACT] > 0 && $_SESSION['stats'][ARMOUR][ACT] > 0) {
+	// Survived
+	foreach ($data->story->survived as $paragraph) {
+		echo "<div class=\"text\">\n";
+		echo $paragraph."\n";
+		echo "</div>\n\n";
+	}
+} else {
+	// Died
+	foreach ($data->story->died as $paragraph) {
+		echo "<div class=\"text\">\n";
+		echo $paragraph."\n";
+		echo "</div>\n\n";
+	}
 }
 
 // Image

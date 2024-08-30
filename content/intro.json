@@ -3,7 +3,11 @@
     "title_middle": [
         "<i>Věnováno Ronniemu</i>"
     ],
-    "story": [],
+    "story": {
+        "always": [],
+        "survived": [],
+        "died": []
+    },
     "options": [
         {
             "node": "intro-1",

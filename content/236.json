@@ -1,9 +1,13 @@
 {
     "title_main": "236",
     "title_middle": [],
-    "story": [
-        "Muž se na tebe podívá, odplivne si a&nbsp;vzkřikne: &bdquo;Povídám tas, ty špinavý vrahu!&ldquo; Nemáš na výběr, musíš ho poslechnout (otoč na <b>333</b>)."
-    ],
+    "story": {
+        "always": [
+            "Muž se na tebe podívá, odplivne si a&nbsp;vzkřikne: &bdquo;Povídám tas, ty špinavý vrahu!&ldquo; Nemáš na výběr, musíš ho poslechnout (otoč na <b>333</b>)."
+        ],
+        "survived": [],
+        "died": []
+    },
     "notes": [],
     "options": [
         {

@@ -2,9 +2,13 @@
     "title_main": "2",
     "title_middle": [],
     "death_case": "Hadí jed tě usmrtil.",
-    "story": [
-        "Běžíš k autu a rychle otevřeš balíček léků z Med-Kitu. Píchneš si sérum proti uštknutí a obvážeš si ránu. Nicméně použití Med-Kitu tentokrát nezvýší tvou STAMINU, pouze zabrání jedu, aby tě usmrtil. Zanedlouho se vzpamatuješ, ale jsi zesláblý po přestálém utrpení. Ztrácíš 1 bod UMĚNÍ BOJE a 2 body STAMINY. Vrátíš se k převrácenému Interceptoru a hada zastřelíš. V přihrádce na rukavice najdeš stočenou několikametrovou plastikovou hadici a vezmeš si ji s sebou. Když se znovu rozjedeš k jihu, stále cítíš bolestivé škubání v paži (otoč na <b>13</b>)."
-    ],
+    "story": {
+        "always": [
+            "Běžíš k autu a rychle otevřeš balíček léků z Med-Kitu. Píchneš si sérum proti uštknutí a obvážeš si ránu. Nicméně použití Med-Kitu tentokrát nezvýší tvou STAMINU, pouze zabrání jedu, aby tě usmrtil. Zanedlouho se vzpamatuješ, ale jsi zesláblý po přestálém utrpení. Ztrácíš 1 bod UMĚNÍ BOJE a 2 body STAMINY. Vrátíš se k převrácenému Interceptoru a hada zastřelíš. V přihrádce na rukavice najdeš stočenou několikametrovou plastikovou hadici a vezmeš si ji s sebou. Když se znovu rozjedeš k jihu, stále cítíš bolestivé škubání v paži (otoč na <b>13</b>)."
+        ],
+        "survived": [],
+        "died": []
+    },
     "image": null,
     "pre_modificator_permanent": {
         "stamina": -2,
