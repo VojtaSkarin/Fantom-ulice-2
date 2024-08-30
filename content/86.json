@@ -36,10 +36,10 @@
             ]
         },
         "stamina": {
-            "mode": "add",
+            "mode": "substract",
             "value": [
-                0,
-                0
+                1,
+                2
             ]
         },
         "luck": {

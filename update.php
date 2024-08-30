@@ -51,6 +51,11 @@ function add_content(&$object) {
 		$object->show_hud = false;
 	}
 	
+	// Kill or revive
+	if (! property_exists($object, 'life') {
+		$object->life = 'nothing';
+	}
+	
 	// Stats
 	$stat = new stdClass();
 	$stat->mode = 3; /* CHANGE */

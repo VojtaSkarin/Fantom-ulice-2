@@ -52,6 +52,9 @@ define('ACT', 'actual');
 define('THROWS', 0);
 define('SHIFT', 1);
 
+define('BOUNDED', true);
+define('UNBOUNDED', false);
+
 // Others
 define("ITEMS", array(
 	"HOSE" => "plastiková hadice",
@@ -130,18 +133,18 @@ if (! $_SESSION['executed']) {
 	}
 
 	// Stats
-	update_stat($_SESSION['stats'][FIGHT_SKILL], $data->stats->fight_skill);
-	update_stat($_SESSION['stats'][STAMINA], $data->stats->stamina);
-	update_stat($_SESSION['stats'][LUCK], $data->stats->luck);
-	update_stat($_SESSION['stats'][MED_KIT], $data->stats->med_kit);
-	update_stat($_SESSION['stats'][CREDITS], $data->stats->credits);
-	update_stat($_SESSION['stats'][FIREPOWER], $data->stats->firepower);
-	update_stat($_SESSION['stats'][ARMOUR], $data->stats->armour);
-	update_stat($_SESSION['stats'][ROCKETS], $data->stats->rockets);
-	update_stat($_SESSION['stats'][NAILS], $data->stats->nails);
-	update_stat($_SESSION['stats'][OIL], $data->stats->oil);
-	update_stat($_SESSION['stats'][WHEELS], $data->stats->wheels);
-	update_stat($_SESSION['stats'][FUEL], $data->stats->fuel);
+	update_stat($_SESSION['stats'][FIGHT_SKILL], $data->stats->fight_skill, BOUNDED);
+	update_stat($_SESSION['stats'][STAMINA], $data->stats->stamina, BOUNDED);
+	update_stat($_SESSION['stats'][LUCK], $data->stats->luck, BOUNDED);
+	update_stat($_SESSION['stats'][MED_KIT], $data->stats->med_kit, UNBOUNDED);
+	update_stat($_SESSION['stats'][CREDITS], $data->stats->credits, UNBOUNDED);
+	update_stat($_SESSION['stats'][FIREPOWER], $data->stats->firepower, BOUNDED);
+	update_stat($_SESSION['stats'][ARMOUR], $data->stats->armour, BOUNDED);
+	update_stat($_SESSION['stats'][ROCKETS], $data->stats->rockets, UNBOUNDED);
+	update_stat($_SESSION['stats'][NAILS], $data->stats->nails, UNBOUNDED);
+	update_stat($_SESSION['stats'][OIL], $data->stats->oil, UNBOUNDED);
+	update_stat($_SESSION['stats'][WHEELS], $data->stats->wheels, UNBOUNDED);
+	update_stat($_SESSION['stats'][FUEL], $data->stats->fuel, UNBOUNDED);
 	
 	// Equipment
 	if ($data->stats->equipment->mode == EquipMode::Add->value) {
@@ -152,9 +155,11 @@ if (! $_SESSION['executed']) {
 		$_SESSION['stats'][EQUIPMENT] = array();
 	}
 	
-	//header('Location: play.php');
+	$_SESSION['alive'] = $_SESSION[STAMINA][ACT] > 0 && $_SESSION['stats'][ARMOUR][ACT] > 0;
+	
+	header('Location: play.php');
 }
-print_r($_SESSION['stats']);
+
 /* Render page*/
 // Header
 //echo $_SESSION['node'];
@@ -201,7 +206,7 @@ foreach ($data->story->always as $paragraph) {
 	echo "</div>\n\n";
 }
 
-if ($_SESSION['stats'][STAMINA][ACT] > 0 && $_SESSION['stats'][ARMOUR][ACT] > 0) {
+if ($_SESSION['alive']) {
 	// Survived
 	foreach ($data->story->survived as $paragraph) {
 		echo "<div class=\"text\">\n";
@@ -233,25 +238,27 @@ define('OPTION_MARKS', array(
 	'MARK_NEXT' => '<i>Další stránka</i>'
 	));
 
-echo "<div class=\"link-block\">\n";
+if ($_SESSION['alive']) {
+	echo "<div class=\"link-block\">\n";
 
-foreach($data->options as $i => $option) {
-	if (str_starts_with($option->description, MARK)) {
-		if ($option->description == MARK_TURN) {
-			$description = "Otočit na <b>" . $option->node . "</b>";
+	foreach($data->options as $i => $option) {
+		if (str_starts_with($option->description, MARK)) {
+			if ($option->description == MARK_TURN) {
+				$description = "Otočit na <b>" . $option->node . "</b>";
+			} else {
+				$description = OPTION_MARKS[$option->description];
+			}
 		} else {
-			$description = OPTION_MARKS[$option->description];
+			$description = $option->description;
 		}
-	} else {
-		$description = $option->description;
+		
+		echo "<div class=\"link\">\n";
+		echo "<a href=\"play.php?action=".($i + 1)."&node=".$_SESSION['node']."\">".$description."</a>\n";
+		echo "</div>\n\n";
 	}
-	
-	echo "<div class=\"link\">\n";
-	echo "<a href=\"play.php?action=".($i + 1)."&node=".$_SESSION['node']."\">".$description."</a>\n";
+
 	echo "</div>\n\n";
 }
-
-echo "</div>\n\n";
 
 // Note
 foreach ($data->notes as $note) {
@@ -402,7 +409,7 @@ if ($data->show_hud) {
 }
 
 // Helper functions
-function update_stat(&$stat, $data) {
+function update_stat(&$stat, $data, $bounded) {
 	if ($data->mode == NOTHING) {
 		return;
 	}
@@ -418,9 +425,12 @@ function update_stat(&$stat, $data) {
 	} else if ($data->mode == SET) {
 		$stat[ACT] = $value;
 	} else if ($data->mode == ADD) {
-		$stat[ACT] = min($stat[MAX], $stat[ACT] + $value);
+		$stat[ACT] += $value;
+		if ($bounded) {
+			$stat[ACT] = min($stat[MAX], $stat[ACT]);
+		}
 	} else if ($data->mode == SUBSTRACT) {
-		$stat[ACT] = max(0, $stat[ACT] + $value);
+		$stat[ACT] = max(0, $stat[ACT] - $value);
 	}
 }
 
