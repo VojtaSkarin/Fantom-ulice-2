@@ -436,11 +436,18 @@ function update_stat(&$stat, $data, $bounded) {
 		$stat[ACT] = $value;
 	} else if ($data->mode == ADD) {
 		$stat[ACT] += $value;
-		if ($bounded) {
-			$stat[ACT] = min($stat[MAX], $stat[ACT]);
+		if ($stat[ACT] < 0) {
+			$stat[ACT] = 0;
+		} else if ($bounded && $stat[ACT] > $stat[MAX]) {
+			$stat[ACT] = $stat[MAX];
 		}
 	} else if ($data->mode == SUBSTRACT) {
-		$stat[ACT] = max(0, $stat[ACT] - $value);
+		$stat[ACT] -= $value;
+		if ($stat[ACT] < 0) {
+			$stat[ACT] = 0;
+		} else if ($stat[ACT] > $stat[MAX]) {
+			$stat[ACT] = $stat[MAX];
+		}
 	}
 }
 
