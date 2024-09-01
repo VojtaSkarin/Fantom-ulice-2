@@ -227,24 +227,18 @@ if ($_SESSION['node'] == 'fight_skill') {
 // Story
 // Always
 foreach ($data->story->always as $paragraph) {
-	echo "<div class=\"text\">\n";
-	echo replace_marks($paragraph)."\n";
-	echo "</div>\n\n";
+	print_paragraph($paragraph);
 }
 
 if ($_SESSION['alive']) {
 	// Survived
 	foreach ($data->story->survived as $paragraph) {
-		echo "<div class=\"text\">\n";
-		echo $paragraph."\n";
-		echo "</div>\n\n";
+		print_paragraph($paragraph);
 	}
 } else {
 	// Died
 	foreach ($data->story->died as $paragraph) {
-		echo "<div class=\"text\">\n";
-		echo $paragraph."\n";
-		echo "</div>\n\n";
+		print_paragraph($paragraph, true);
 	}
 }
 
@@ -459,6 +453,22 @@ function localized_date($case) {
 
 function replace_marks($string) {
 	return str_replace(array_keys(MARKS), array_values(MARKS), $string);
+}
+
+function print_paragraph($paragraph, $died=false) {
+	if ($paragraph->pre || $died) {
+		echo "<div class=\"text\">\n";
+	}
+	
+	if ($died) {
+		echo "</div>\n\n";
+	}
+	
+	echo replace_marks($paragraph->content)."\n";
+	
+	if ($paragraph->post) {
+		echo "</div>\n\n";
+	}
 }
 
 include 'feedback.php';

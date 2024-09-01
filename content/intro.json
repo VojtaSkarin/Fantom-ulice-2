@@ -54,7 +54,7 @@
             ]
         },
         "firepower": {
-            "mode": "firepower",
+            "mode": "initialize",
             "value": [
                 1,
                 6

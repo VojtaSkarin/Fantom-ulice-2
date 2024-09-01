@@ -18,6 +18,13 @@ foreach (scandir($path) as $file) {
 		
 		// Update
 		add_content($data);
+		foreach ($data->story->died as &$paragraph) {
+			$x = $paragraph;
+			$paragraph = new stdClass();
+			$paragraph->pre = true;
+			$paragraph->post = true;
+			$paragraph->content = $x;
+		}
 		
 		// Encode
 		$encoded = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);

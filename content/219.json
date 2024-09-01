@@ -3,7 +3,11 @@
     "title_middle": [],
     "story": {
         "always": [
-            "Rychle mu řekneš, že jsi jeho ženu a&nbsp;syna nezabil. <i>Zkus své štěstí.</i> Pokud máš štěstí, otoč na <b>288</b>. Máš-li smůlu, otoč na <b>236</b>."
+            {
+                "pre": true,
+                "post": true,
+                "content": "Rychle mu řekneš, že jsi jeho ženu a&nbsp;syna nezabil. <i>Zkus své štěstí.</i> Pokud máš štěstí, otoč na <b>288</b>. Máš-li smůlu, otoč na <b>236</b>."
+            }
         ],
         "survived": [],
         "died": []
