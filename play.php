@@ -63,6 +63,23 @@ define("ITEMS", array(
 	"HOSE" => "plastiková hadice",
 ));
 
+// Marks
+define('MONTHS', array(
+	array('leden', 'únor', 'březen', 'duben', 'květen', 'červen', 'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec'),
+	array('ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince')));
+	
+define('MARK', 'MARK');
+define('MARK_TURN', 'MARK_TURN');
+define('MARKS', array(
+	'MARK_LUCK' => '<i>Zkusit štěstí</i>',
+	'MARK_FIGHT_SKILL' => '<i>Otestovat své schopnosti</i>',
+	'MARK_SHOWDOWN' => '<i>Poměřit síly</i>',
+	'MARK_CONTINUE' => 'Pokračovat',
+	'MARK_NEXT' => '<i>Další stránka</i>',
+	'MARK_DATE_1' => localized_date(1),
+	'MARK_DATE_2' => localized_date(2)
+	));
+
 // Initialize on fresh start
 if (empty($_SESSION['node'])) {
 	$_SESSION['node'] = 'intro';
@@ -173,7 +190,6 @@ if (! $_SESSION['executed']) {
 /* Render page*/
 // Header
 //echo $_SESSION['node'];
-
 if (! empty($data->title_main)) {
 	echo "<div class=\"title-main\">\n";
 	echo $data->title_main."\n";
@@ -182,7 +198,7 @@ if (! empty($data->title_main)) {
 
 foreach ($data->title_middle as $title) {
 	echo "<div class=\"title-middle\">\n";
-	echo $title."\n";
+	echo replace_marks($title)."\n";
 	echo "</div>\n\n";
 }
 
@@ -212,7 +228,7 @@ if ($_SESSION['node'] == 'fight_skill') {
 // Always
 foreach ($data->story->always as $paragraph) {
 	echo "<div class=\"text\">\n";
-	echo $paragraph."\n";
+	echo replace_marks($paragraph)."\n";
 	echo "</div>\n\n";
 }
 
@@ -238,29 +254,12 @@ if ($data->image != null) {
 }
 
 // Option links
-define('MARK', 'MARK');
-define('MARK_TURN', 'MARK_TURN');
-define('OPTION_MARKS', array(
-	'MARK_LUCK' => '<i>Zkusit štěstí</i>',
-	'MARK_FIGHT_SKILL' => '<i>Otestovat své schopnosti</i>',
-	'MARK_SHOWDOWN' => '<i>Poměřit síly</i>',
-	'MARK_CONTINUE' => 'Pokračovat',
-	'MARK_NEXT' => '<i>Další stránka</i>'
-	));
-
 if ($_SESSION['alive']) {
 	echo "<div class=\"link-block\">\n";
 
 	foreach($data->options as $i => $option) {
-		if (str_starts_with($option->description, MARK)) {
-			if ($option->description == MARK_TURN) {
-				$description = "Otočit na <b>" . $option->node . "</b>";
-			} else {
-				$description = OPTION_MARKS[$option->description];
-			}
-		} else {
-			$description = $option->description;
-		}
+		$description = replace_marks($option->description);
+		$description = str_replace('MARK_TURN', "Otočit na <b>" . $option->node . "</b>", $description);
 		
 		echo "<div class=\"link\">\n";
 		echo "<a href=\"play.php?action=".($i + 1)."&node=".$_SESSION['node']."\">".$description."</a>\n";
@@ -449,6 +448,17 @@ function update_stat(&$stat, $data, $bounded) {
 			$stat[ACT] = $stat[MAX];
 		}
 	}
+}
+
+function localized_date($case) {
+	$day = date('j');
+	$month = date('n');
+	$year = date('Y');
+	return $day . '. ' . MONTHS[$case - 1][$month - 1] . ' ' . $year;
+}
+
+function replace_marks($string) {
+	return str_replace(array_keys(MARKS), array_values(MARKS), $string);
 }
 
 include 'feedback.php';
