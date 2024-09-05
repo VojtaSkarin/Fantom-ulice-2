@@ -3,26 +3,26 @@
     "title_middle": [],
     "story": {
         "always": [
-		{
+            {
                 "pre": true,
                 "post": false,
                 "content": "Ačkoli ošklivě krvácíš, podaří se ti dostat se ke svému autu. Ztrácíš další 1&nbsp;bod STAMINY."
             }
-		],
+        ],
         "survived": [
-		{
+            {
                 "pre": false,
                 "post": true,
                 "content": "Sesuneš se na sedadlo a&nbsp;otevřeš jeden z&nbsp;balíčků v&nbsp;Med-Kitu. Zanedlouho jsou tvé rány ošetřeny - vyjmeš broky, nastříkáš vrstvu syntetické pokožky a&nbsp;zakryješ obvazem. Když nastartuješ, pustíš spojku a&nbsp;vyjedeš z&nbsp;města, hned se cítíš lépe (otoč na <b>34</b>)."
             }
-			],
+        ],
         "died": [
-		{
+            {
                 "pre": false,
                 "post": true,
                 "content": "Vykrvácel jsi."
             }
-			]
+        ]
     },
     "notes": [],
     "options": [
@@ -36,95 +36,6 @@
     "options_fight_skill": [],
     "image": null,
     "show_hud": true,
-    "stats": {
-        "fight_skill": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "stamina": {
-            "mode": "substract",
-            "value": [
-                0,
-                1
-            ]
-        },
-        "luck": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "med_kit": {
-            "mode": "substract",
-            "value": [
-                0,
-                1
-            ]
-        },
-        "credits": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "firepower": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "armour": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "rockets": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "nails": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "oil": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "wheels": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "fuel": {
-            "mode": "nothing",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "equipment": {
-            "mode": 1,
-            "content": []
-        }
-    },
-    "life": "nothing"
+    "life": "nothing",
+    "stats": []
 }

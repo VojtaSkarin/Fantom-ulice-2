@@ -26,19 +26,19 @@ enum EquipMode : int {
 }
 
 // Stats
-define('FIGHT_SKILL', 'Combat_Skill');
-define('STAMINA', 'Stamina');
-define('LUCK', 'Luck');
-define('MED_KIT', 'Med_Kit');
-define('CREDITS', 'Credits');
-define('FIREPOWER', 'Firepower');
-define('ARMOUR', 'Armour');
-define('ROCKETS', 'Rockets');
-define('NAILS', 'Nails');
-define('OIL', 'Oil');
-define('WHEELS', 'Wheels');
-define('FUEL', 'Fuel');
-define('EQUIPMENT', 'Equipment');
+define('FIGHT_SKILL', 'fight_skill');
+define('STAMINA', 'stamina');
+define('LUCK', 'luck');
+define('MED_KIT', 'med_kit');
+define('CREDITS', 'credits');
+define('FIREPOWER', 'firepower');
+define('ARMOUR', 'armour');
+define('ROCKETS', 'rockets');
+define('NAILS', 'nails');
+define('OIL', 'oil');
+define('WHEELS', 'wheels');
+define('FUEL', 'fuel');
+define('EQUIPMENT', 'equipment');
 
 define('STATS', array(FIGHT_SKILL, STAMINA, LUCK, MED_KIT, CREDITS, FIREPOWER, ARMOUR, ROCKETS, NAILS, OIL));
 
@@ -157,18 +157,9 @@ if (! $_SESSION['executed']) {
 	}
 
 	// Stats
-	update_stat($_SESSION['stats'][FIGHT_SKILL], $data->stats->fight_skill, BOUNDED);
-	update_stat($_SESSION['stats'][STAMINA], $data->stats->stamina, BOUNDED);
-	update_stat($_SESSION['stats'][LUCK], $data->stats->luck, BOUNDED);
-	update_stat($_SESSION['stats'][MED_KIT], $data->stats->med_kit, UNBOUNDED);
-	update_stat($_SESSION['stats'][CREDITS], $data->stats->credits, UNBOUNDED);
-	update_stat($_SESSION['stats'][FIREPOWER], $data->stats->firepower, BOUNDED);
-	update_stat($_SESSION['stats'][ARMOUR], $data->stats->armour, BOUNDED);
-	update_stat($_SESSION['stats'][ROCKETS], $data->stats->rockets, UNBOUNDED);
-	update_stat($_SESSION['stats'][NAILS], $data->stats->nails, UNBOUNDED);
-	update_stat($_SESSION['stats'][OIL], $data->stats->oil, UNBOUNDED);
-	update_stat($_SESSION['stats'][WHEELS], $data->stats->wheels, UNBOUNDED);
-	update_stat($_SESSION['stats'][FUEL], $data->stats->fuel, UNBOUNDED);
+	foreach ($data->stats as $stat) {
+		update_stat($stat);
+	}
 	
 	// Equipment
 	if ($data->stats->equipment->mode == EquipMode::Add->value) {
@@ -188,7 +179,7 @@ if (! $_SESSION['executed']) {
 		$_SESSION['alive'] = true;
 	}
 	
-	header('Location: play.php');
+	//header('Location: play.php');
 }
 
 /* Render page*/
@@ -418,37 +409,49 @@ if ($data->show_hud) {
 	echo "</div>\n\n";
 }
 
+define('IS_BOUNDED', array(
+	FIGHT_SKILL => BOUNDED,
+	STAMINA => BOUNDED,
+	LUCK => BOUNDED,
+	MED_KIT => UNBOUNDED,
+	CREDITS => UNBOUNDED,
+	FIREPOWER => BOUNDED,
+	ARMOUR => BOUNDED,
+	ROCKETS => UNBOUNDED,
+	NAILS => UNBOUNDED,
+	OIL => UNBOUNDED,
+	WHEELS => UNBOUNDED,
+	FUEL => UNBOUNDED
+));
+
 // Helper functions
-function update_stat(&$stat, $data, $bounded) {
-	if ($data->mode == NOTHING) {
-		return;
-	}
-	
+function update_stat($change) {
 	$value = 0;
-	for ($i = 0; $i < $data->value[THROWS]; $i++) {
+	for ($i = 0; $i < $change->value[THROWS]; $i++) {
 		$value += rand(1, 6);
 	}
-	$value += $data->value[SHIFT];
+	$value += $change->value[SHIFT];
 	
-	if ($data->mode == INITIALIZE) {
+	$stat = &$_SESSION['stats'][$change->stat];
+	
+	if ($change->mode == INITIALIZE) {
 		$stat[MAX] = $stat[ACT] = $value;
-	} else if ($data->mode == SET) {
+	} else if ($change->mode == SET) {
 		$stat[ACT] = $value;
-	} else if ($data->mode == ADD) {
+	} else if ($change->mode == ADD) {
 		$stat[ACT] += $value;
 		if ($stat[ACT] < 0) {
 			$stat[ACT] = 0;
 		} else if ($bounded && $stat[ACT] > $stat[MAX]) {
 			$stat[ACT] = $stat[MAX];
 		}
-	} else if ($data->mode == SUBSTRACT) {
+	} else if ($change->mode == SUBSTRACT) {
 		$stat[ACT] -= $value;
 		if ($stat[ACT] < 0) {
 			$stat[ACT] = 0;
 		} else if ($bounded && $stat[ACT] > $stat[MAX]) {
 			$stat[ACT] = $stat[MAX];
 		}
-		echo $stat[ACT];
 	}
 }
 

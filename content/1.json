@@ -25,99 +25,10 @@
             "conditions": []
         }
     ],
-    "stats": {
-        "stamina": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "luck": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "med_kit": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "credits": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "firepower": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "armour": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "rockets": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "nails": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "oil": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "wheels": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "fuel": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        },
-        "equipment": {
-            "mode": 1,
-            "content": []
-        },
-        "fight_skill": {
-            "mode": "add",
-            "value": [
-                0,
-                0
-            ]
-        }
-    },
     "show_hud": true,
     "notes": [],
     "options_luck": [],
     "options_fight_skill": [],
-    "life": "nothing"
+    "life": "nothing",
+    "stats": []
 }

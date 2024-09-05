@@ -16,99 +16,69 @@
         }
     ],
     "image": "intro-image.png",
-    "show_hud": false,
+    "show_hud": true,
     "life": "revive",
-    "stats": {
-        "fight_skill": {
-            "mode": "initialize",
-            "value": [
-                1,
-                6
-            ]
-        },
-        "stamina": {
-            "mode": "initialize",
-            "value": [
-                2,
-                24
-            ]
-        },
-        "luck": {
-            "mode": "initialize",
-            "value": [
-                1,
-                6
-            ]
-        },
-        "med_kit": {
-            "mode": "set",
-            "value": [
-                0,
-                10
-            ]
-        },
-        "credits": {
-            "mode": "set",
-            "value": [
-                0,
-                200
-            ]
-        },
-        "firepower": {
-            "mode": "initialize",
-            "value": [
-                1,
-                6
-            ]
-        },
-        "armour": {
-            "mode": "initialize",
-            "value": [
-                2,
-                24
-            ]
-        },
-        "rockets": {
-            "mode": "set",
-            "value": [
-                0,
-                4
-            ]
-        },
-        "nails": {
-            "mode": "set",
-            "value": [
-                0,
-                3
-            ]
-        },
-        "oil": {
-            "mode": "set",
-            "value": [
-                0,
-                2
-            ]
-        },
-        "wheels": {
-            "mode": "set",
-            "value": [
-                0,
-                2
-            ]
-        },
-        "fuel": {
-            "mode": "set",
-            "value": [
-                0,
-                1
-            ]
-        },
-        "equipment": {
-            "mode": 4,
-            "content": []
-        }
-    },
     "notes": [],
     "options_luck": [],
-    "options_fight_skill": []
+    "options_fight_skill": [],
+    "stats": [{
+		"stat": "fight_skill",
+		"mode": "initialize",
+		"value": [1, 6]
+	},
+	{
+		"stat": "stamina",
+		"mode": "initialize",
+		"value": [2, 24]
+	},
+	{
+		"stat": "luck",
+		"mode": "initialize",
+		"value": [1, 6]
+	},
+	{
+		"stat": "med_kit",
+		"mode": "set",
+		"value": [0, 10]
+	},
+	{
+		"stat": "credits",
+		"mode": "set",
+		"value": [0, 200]
+	},
+	{
+		"stat": "firepower",
+		"mode": "initialize",
+		"value": [1, 6]
+	},
+	{
+		"stat": "armour",
+		"mode": "initialize",
+		"value": [2, 24]
+	},
+	{
+		"stat": "rockets",
+		"mode": "set",
+		"value": [0, 4]
+	},
+	{
+		"stat": "nails",
+		"mode": "set",
+		"value": [0, 3]
+	},
+	{
+		"stat": "oil",
+		"mode": "set",
+		"value": [0, 2]
+	},
+	{
+		"stat": "wheels",
+		"mode": "set",
+		"value": [0, 2]
+	},
+	{
+		"stat": "fuel",
+		"mode": "set",
+		"value": [0, 1]
+	}]
 }
