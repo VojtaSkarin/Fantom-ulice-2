@@ -18,8 +18,6 @@ foreach (scandir($path) as $file) {
 		
 		// Update
 		add_content($data);
-		unset($data->stats);
-		$data->stats = array();
 		
 		// Encode
 		$encoded = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
@@ -58,41 +56,14 @@ function add_content(&$object) {
 		$object->life = 'nothing';
 	}
 	
-	// Stats
-	$stat = new stdClass();
-	$stat->mode = 3; /* CHANGE */
-	$stat->value = 0;
-	
-	$stats = new stdClass();
-	$stats->combat_skill = $stat;
-	$stats->stamina = $stat;
-	$stats->luck = $stat;
-	$stats->med_kit = $stat;
-	$stats->credits = $stat;
-	$stats->firepower = $stat;
-	$stats->armour = $stat;
-	$stats->rockets = $stat;
-	$stats->nails = $stat;
-	$stats->oil = $stat;
-	$stats->wheels = $stat;
-	$stats->fuel = $stat;
-	
 	if (! property_exists($object, 'stats')) {
-		$object->stats = $stats;
+		$object->stats = array();
 	}
 	
-	if (! property_exists($object->stats, 'wheels')) {
-		$object->stats->wheels = $stat;
-	}
-	
-	if (! property_exists($object->stats, 'fuel')) {
-		$object->stats->fuel = $stat;
-	}
-	
-	if (! property_exists($object->stats, 'equipment')) {
-		$object->stats->equipment = new stdClass();
-		$object->stats->equipment->mode = 1;
-		$object->stats->equipment->content = array();
+	if (! property_exists($object, 'equipment')) {
+		$object->equipment = new stdClass();
+		$object->equipment->mode = "nothing";
+		$object->equipment->content = array();
 	}
 }
 ?>

@@ -16,14 +16,7 @@ define('INITIALIZE', 'initialize');
 define('SET', 'set');
 define('ADD', 'add');
 define('SUBSTRACT', 'substract');
-
-// Mode of equipment change
-enum EquipMode : int {
-	case Nothing = 1;
-	case Add = 2;
-	case Remove = 3;
-	case Empty = 4;
-}
+define('REMOVE', 'remove');
 
 // Stats
 define('FIGHT_SKILL', 'fight_skill');
@@ -162,12 +155,12 @@ if (! $_SESSION['executed']) {
 	}
 	
 	// Equipment
-	if ($data->stats->equipment->mode == EquipMode::Add->value) {
-		$_SESSION['stats'][EQUIPMENT] = array_merge($_SESSION['stats'][$QUIPMENT], Łdata->stats->equipment->content);
-	} else if ($data->stats->equipment->mode == EquipMode::Remove->value) {
-		$_SESSION['stats'][EQUIPMENT] = array_diff($_SESSION['stats'][EQUIPMENT], $data->stats->equipment->content);
-	} else if ($data->stats->equipment->mode == EquipMode::Empty->value) {
-		$_SESSION['stats'][EQUIPMENT] = array();
+	if ($data->equipment->mode == INITIALIZE) {
+		$_SESSION[EQUIPMENT] = array();
+	} else if ($data->equipment->mode == ADD) {
+		$_SESSION[EQUIPMENT] = array_merge($_SESSION[$QUIPMENT], $data->equipment->content);
+	} else if ($data->equipment->mode == REMOVE) {
+		$_SESSION['stats'][EQUIPMENT] = array_diff($_SESSION[EQUIPMENT], $data->equipment->content);
 	}
 	
 	// Check death condition
@@ -387,7 +380,7 @@ if ($data->show_hud) {
 	// Equipment
 	echo "<div class=\"stat\">\n";
 	echo 'VYBAVENÍ: ';
-	$equipment = $_SESSION['stats'][EQUIPMENT];
+	$equipment = $_SESSION[EQUIPMENT];
 
 	foreach ($equipment as $i => $item) {
 		if ($item[0] == '_') {

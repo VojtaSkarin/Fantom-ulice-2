@@ -33,5 +33,9 @@
     "options_luck": [],
     "options_fight_skill": [],
     "life": "nothing",
+    "equipment": {
+        "mode": "nothing",
+        "content": []
+    },
     "stats": []
 }

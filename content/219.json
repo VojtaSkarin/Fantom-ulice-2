@@ -28,5 +28,9 @@
     "notes": [],
     "options_fight_skill": [],
     "life": "nothing",
+    "equipment": {
+        "mode": "nothing",
+        "content": []
+    },
     "stats": []
 }

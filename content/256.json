@@ -37,5 +37,9 @@
     "image": null,
     "show_hud": true,
     "life": "nothing",
+    "equipment": {
+        "mode": "nothing",
+        "content": []
+    },
     "stats": []
 }
