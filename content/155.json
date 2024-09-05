@@ -34,5 +34,9 @@
         "mode": "nothing",
         "content": []
     },
-    "stats": []
+    "stats": [{
+		"stat": "luck",
+		"mode": "substract",
+		"value": [0, 1]
+	}]
 }

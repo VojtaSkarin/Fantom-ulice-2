@@ -1,12 +1,12 @@
 {
-    "title_main": null,
+    "title_main": "108",
     "title_middle": [],
     "story": {
         "always": [
 		{
                 "pre": true,
                 "post": true,
-                "content": ""
+                "content": "K&nbsp;tvému velkému ulehčení jsi mířil přesně a&nbsp;pes je na místě mrtev. Otoč na <b>89</b>."
             }
 			],
         "survived": [],
@@ -15,8 +15,8 @@
     "notes": [],
     "options": [
         {
-            "node": "intro-1",
-            "description": "<i>Další stránka</i>",
+            "node": "89",
+            "description": "MARK_TURN",
             "conditions": []
         }
     ],

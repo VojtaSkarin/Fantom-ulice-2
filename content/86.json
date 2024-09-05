@@ -56,5 +56,9 @@
         "mode": "nothing",
         "content": []
     },
-    "stats": []
+    "stats": [{
+		"stat": "stamina",
+		"mode": "substract",
+		"value": [1, 2]
+	}]
 }

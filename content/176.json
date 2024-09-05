@@ -1,12 +1,12 @@
 {
-    "title_main": null,
+    "title_main": "176",
     "title_middle": [],
     "story": {
         "always": [
 		{
                 "pre": true,
                 "post": true,
-                "content": ""
+                "content": "Hoď dvěma kostkami. Pokud je výsledek menší nebo roven tvému UMĚNÍ BOJE, otoč na <b>108</b>. Pokud je výsledek větší než tvé UMĚNÍ BOJE, otoč na <b>350</b>."
             }
 			],
         "survived": [],
@@ -15,13 +15,13 @@
     "notes": [],
     "options": [
         {
-            "node": "intro-1",
-            "description": "<i>Další stránka</i>",
+            "node": "fight_skill",
+            "description": "MARK_FIGHT_SKILL",
             "conditions": []
         }
     ],
     "options_luck": [],
-    "options_fight_skill": [],
+    "options_fight_skill": ["108", "350"],
     "image": null,
     "show_hud": true,
     "life": "nothing",

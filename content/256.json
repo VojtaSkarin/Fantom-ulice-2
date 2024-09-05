@@ -41,5 +41,19 @@
         "mode": "nothing",
         "content": []
     },
-    "stats": []
+    "stats": [{
+		"stat": "stamina",
+		"mode": "substract",
+		"value": [0, 1]
+	},
+	{
+		"stat": "med_kit",
+		"mode": "substract",
+		"value": [0, 1]
+	},
+	{
+		"stat": "stamina",
+		"mode": "add",
+		"value": [0, 4]
+	}]
 }

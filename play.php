@@ -48,6 +48,22 @@ define('SHIFT', 1);
 define('BOUNDED', true);
 define('UNBOUNDED', false);
 
+
+define('IS_BOUNDED', array(
+	FIGHT_SKILL => BOUNDED,
+	STAMINA => BOUNDED,
+	LUCK => BOUNDED,
+	MED_KIT => UNBOUNDED,
+	CREDITS => UNBOUNDED,
+	FIREPOWER => BOUNDED,
+	ARMOUR => BOUNDED,
+	ROCKETS => UNBOUNDED,
+	NAILS => UNBOUNDED,
+	OIL => UNBOUNDED,
+	WHEELS => UNBOUNDED,
+	FUEL => UNBOUNDED
+));
+
 define('KILL', 'kill');
 define('REVIVE', 'revive');
 
@@ -135,7 +151,7 @@ if ($data != null) {
 // On first loading actions
 if (! $_SESSION['executed']) {
 	$_SESSION['executed'] = true;
-	
+
 	// Luck
 	if ($_SESSION['node'] == 'luck') {
 		$_SESSION['throw'] = rand(1, 6) + rand(1, 6);
@@ -152,8 +168,12 @@ if (! $_SESSION['executed']) {
 	// Stats
 	foreach ($data->stats as $stat) {
 		update_stat($stat);
+		
+		if (! check_alive() && $_SESSION['node'] != 'intro') {
+			break;
+		}
 	}
-	
+
 	// Equipment
 	if ($data->equipment->mode == INITIALIZE) {
 		$_SESSION[EQUIPMENT] = array();
@@ -164,7 +184,7 @@ if (! $_SESSION['executed']) {
 	}
 	
 	// Check death condition
-	$_SESSION['alive'] = $_SESSION['stats'][STAMINA][ACT] > 0 && $_SESSION['stats'][ARMOUR][ACT] > 0;
+	check_alive();
 	
 	if ($data->life == KILL) {
 		$_SESSION['alive'] = false;
@@ -172,7 +192,7 @@ if (! $_SESSION['executed']) {
 		$_SESSION['alive'] = true;
 	}
 	
-	//header('Location: play.php');
+	header('Location: play.php');
 }
 
 /* Render page*/
@@ -402,21 +422,6 @@ if ($data->show_hud) {
 	echo "</div>\n\n";
 }
 
-define('IS_BOUNDED', array(
-	FIGHT_SKILL => BOUNDED,
-	STAMINA => BOUNDED,
-	LUCK => BOUNDED,
-	MED_KIT => UNBOUNDED,
-	CREDITS => UNBOUNDED,
-	FIREPOWER => BOUNDED,
-	ARMOUR => BOUNDED,
-	ROCKETS => UNBOUNDED,
-	NAILS => UNBOUNDED,
-	OIL => UNBOUNDED,
-	WHEELS => UNBOUNDED,
-	FUEL => UNBOUNDED
-));
-
 // Helper functions
 function update_stat($change) {
 	$value = 0;
@@ -424,7 +429,7 @@ function update_stat($change) {
 		$value += rand(1, 6);
 	}
 	$value += $change->value[SHIFT];
-	
+
 	$stat = &$_SESSION['stats'][$change->stat];
 	
 	if ($change->mode == INITIALIZE) {
@@ -435,17 +440,18 @@ function update_stat($change) {
 		$stat[ACT] += $value;
 		if ($stat[ACT] < 0) {
 			$stat[ACT] = 0;
-		} else if ($bounded && $stat[ACT] > $stat[MAX]) {
+		} else if (IS_BOUNDED[$change->stat] && $stat[ACT] > $stat[MAX]) {
 			$stat[ACT] = $stat[MAX];
 		}
 	} else if ($change->mode == SUBSTRACT) {
 		$stat[ACT] -= $value;
 		if ($stat[ACT] < 0) {
 			$stat[ACT] = 0;
-		} else if ($bounded && $stat[ACT] > $stat[MAX]) {
+		} else if (IS_BOUNDED[$change->stat] && $stat[ACT] > $stat[MAX]) {
 			$stat[ACT] = $stat[MAX];
 		}
 	}
+
 }
 
 function localized_date($case) {
@@ -485,6 +491,10 @@ function conditions_met($option) {
 	}
 	
 	return $met;
+}
+
+function check_alive() {
+return $_SESSION['alive'] = $_SESSION['stats'][STAMINA][ACT] > 0 && $_SESSION['stats'][ARMOUR][ACT] > 0;
 }
 
 include 'feedback.php';
