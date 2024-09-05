@@ -15,11 +15,13 @@
     "options": [
         {
             "node": "302",
-            "description": "Promluvit si s dívkou"
+            "description": "Promluvit si s dívkou",
+            "conditions": []
         },
         {
             "node": "167",
-            "description": "Odjet"
+            "description": "Odjet",
+            "conditions": []
         }
     ],
     "image": null,

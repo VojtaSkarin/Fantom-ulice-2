@@ -16,7 +16,8 @@
     "options": [
         {
             "node": "333",
-            "description": "MARK_TURN"
+            "description": "MARK_TURN",
+            "conditions": []
         }
     ],
     "options_luck": [],

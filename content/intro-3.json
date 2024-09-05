@@ -28,7 +28,8 @@
     "options": [
         {
             "node": "1",
-            "description": "<i>A nyní otoč stránku</i>"
+            "description": "<i>A nyní otoč stránku</i>",
+            "conditions": []
         }
     ],
     "stats": {

@@ -16,7 +16,8 @@
     "options": [
         {
             "node": "fight_skill",
-            "description": "MARK_FIGHT_SKILL"
+            "description": "MARK_FIGHT_SKILL",
+            "conditions": []
         }
     ],
     "options_luck": [],

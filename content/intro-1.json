@@ -33,7 +33,8 @@
     "options": [
         {
             "node": "intro-2",
-            "description": "MARK_NEXT"
+            "description": "MARK_NEXT",
+            "conditions": []
         }
     ],
     "stats": {

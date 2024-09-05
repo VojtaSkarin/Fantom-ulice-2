@@ -28,13 +28,20 @@
     "options": [
         {
             "node": "38",
-            "description": "Použít Med-Kit"
+            "description": "Použít Med-Kit",
+            "conditions": [{
+				"type": "Med_Kit",
+				"value": 1
+			}]
         },
         {
             "node": "256",
-            "description": "Odplazit se k autu"
-        }
-    ],
+            "description": "Odplazit se k autu",
+            "conditions": [{
+				"type": "Med_Kit",
+				"value": 1
+			}]
+    }],
     "options_luck": [],
     "options_fight_skill": [],
     "image": null,

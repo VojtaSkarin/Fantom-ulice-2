@@ -97,10 +97,11 @@ if (array_key_exists('goto', $_GET)) {
 if (array_key_exists('action', $_GET)) {
 	$valid = true;
 	$action = intval($_GET['action']) - 1;
-
+	
 	if ($_GET['action'] == 'new-game') {
 		$_SESSION['node'] = 'intro';
-	} else if ($action >= 0 && $action < count($_SESSION['options']) && $_SESSION['alive']) {
+		
+	} else if ($action >= 0 && $action < count($_SESSION['options']) && $_SESSION['alive'] && conditions_met($_SESSION['options'][$action])) {
 		if ($_SESSION['node'] == 'luck') {
 			$_SESSION['node'] = $_SESSION['options_luck'][BOOL_TO_INDEX[$_SESSION['luck']]];
 		} else if ($_SESSION['node'] == 'fight_skill') {
@@ -129,10 +130,13 @@ try {
 define('CHECKS', array('luck', 'fight_skill'));
 
 // JSON is loaded AFTER command processing
-if (! in_array($_SESSION['node'], CHECKS) && $data != null) {
+if ($data != null) {
 	$_SESSION['options'] = $data->options;
-	$_SESSION['options_luck'] = $data->options_luck;
-	$_SESSION['options_fight_skill'] = $data->options_fight_skill;
+	
+	if (! in_array($_SESSION['node'], CHECKS)) {
+		$_SESSION['options_luck'] = $data->options_luck;
+		$_SESSION['options_fight_skill'] = $data->options_fight_skill;
+	}
 }
 
 // On first loading actions
@@ -177,7 +181,7 @@ if (! $_SESSION['executed']) {
 	
 	// Check death condition
 	$_SESSION['alive'] = $_SESSION['stats'][STAMINA][ACT] > 0 && $_SESSION['stats'][ARMOUR][ACT] > 0;
-	echo $_SESSION['alive'];
+	
 	if ($data->life == KILL) {
 		$_SESSION['alive'] = false;
 	} else if ($data->life == REVIVE) {
@@ -189,7 +193,6 @@ if (! $_SESSION['executed']) {
 
 /* Render page*/
 // Header
-//echo $_SESSION['node'];
 if (! empty($data->title_main)) {
 	echo "<div class=\"title-main\">\n";
 	echo $data->title_main."\n";
@@ -252,6 +255,10 @@ if ($_SESSION['alive']) {
 	echo "<div class=\"link-block\">\n";
 
 	foreach($data->options as $i => $option) {
+		if (! conditions_met($option)) {
+			continue;
+		}
+		
 		$description = replace_marks($option->description);
 		$description = str_replace('MARK_TURN', "Otočit na <b>" . $option->node . "</b>", $description);
 		
@@ -438,9 +445,10 @@ function update_stat(&$stat, $data, $bounded) {
 		$stat[ACT] -= $value;
 		if ($stat[ACT] < 0) {
 			$stat[ACT] = 0;
-		} else if ($stat[ACT] > $stat[MAX]) {
+		} else if ($bounded && $stat[ACT] > $stat[MAX]) {
 			$stat[ACT] = $stat[MAX];
 		}
+		echo $stat[ACT];
 	}
 }
 
@@ -469,6 +477,18 @@ function print_paragraph($paragraph, $died=false) {
 	if ($paragraph->post) {
 		echo "</div>\n\n";
 	}
+}
+
+function conditions_met($option) {
+	$met = true;
+	
+	foreach ($option->conditions as $condition) {
+		if ($condition->type == MED_KIT) {
+			$met = $met && $_SESSION['stats'][MED_KIT][ACT] >= $condition->value;
+		}
+	}
+	
+	return $met;
 }
 
 include 'feedback.php';

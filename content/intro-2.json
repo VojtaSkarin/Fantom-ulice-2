@@ -28,7 +28,8 @@
     "options": [
         {
             "node": "intro-3",
-            "description": "MARK_NEXT"
+            "description": "MARK_NEXT",
+            "conditions": []
         }
     ],
     "stats": {

@@ -15,11 +15,13 @@
     "options": [
         {
             "node": "274",
-            "description": "Mluvit pravdu"
+            "description": "Mluvit pravdu",
+            "conditions": []
         },
         {
             "node": "155",
-            "description": "Vydávat se za jezdce-zabijáka"
+            "description": "Vydávat se za jezdce-zabijáka",
+            "conditions": []
         }
     ],
     "image": null,

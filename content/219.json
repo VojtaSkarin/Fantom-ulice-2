@@ -15,7 +15,8 @@
     "options": [
         {
             "node": "luck",
-            "description": "MARK_LUCK"
+            "description": "MARK_LUCK",
+            "conditions": []
         }
     ],
     "options_luck": [

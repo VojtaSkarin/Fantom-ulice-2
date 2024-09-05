@@ -16,11 +16,13 @@
     "options": [
         {
             "node": "126",
-            "description": "Zjistit, co se děje"
+            "description": "Zjistit, co se děje",
+            "conditions": []
         },
         {
             "node": "34",
-            "description": "Odjet z města"
+            "description": "Odjet z města",
+            "conditions": []
         }
     ],
     "stats": {

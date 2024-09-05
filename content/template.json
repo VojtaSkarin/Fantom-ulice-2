@@ -10,7 +10,8 @@
     "options": [
         {
             "node": "intro-1",
-            "description": "<i>Další stránka</i>"
+            "description": "<i>Další stránka</i>",
+            "conditions": []
         }
     ],
     "options_luck": [],

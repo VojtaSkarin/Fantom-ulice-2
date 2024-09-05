@@ -24,7 +24,8 @@
     "options": [
         {
             "node": "13",
-            "description": "Otočit na <b>13</b>"
+            "description": "Otočit na <b>13</b>",
+            "conditions": []
         }
     ],
     "stats": {

@@ -11,7 +11,8 @@
     "options": [
         {
             "node": "intro-1",
-            "description": "MARK_NEXT"
+            "description": "MARK_NEXT",
+            "conditions": []
         }
     ],
     "image": "intro-image.png",

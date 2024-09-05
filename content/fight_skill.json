@@ -10,7 +10,8 @@
     "options": [
         {
             "node": "",
-            "description": "MARK_CONTINUE"
+            "description": "MARK_CONTINUE",
+            "conditions": []
         }
     ],
     "options_luck": [],
