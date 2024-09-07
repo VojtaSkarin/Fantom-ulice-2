@@ -1,0 +1,51 @@
+{
+    "title_main": "209",
+    "title_middle": [],
+    "story": {
+        "always": [
+		{
+                "pre": true,
+                "post": true,
+                "content": "Když podáváš lupiči klíče, ušklíbne se a&nbsp;rozmáchne se páčidlem. Rána tě omráčí a&nbsp;když se probereš, zjistíš, že ti dva a&nbsp;jejich sporťák jsou pryč<sup>1</sup> - ale tvůj Interceptor taky. Svůj úkol jsi nesplnil."
+            }
+			],
+        "survived": [],
+        "died": []
+    },
+    "notes": ["1. V českém překladu &bdquo;<i>sporťák je pryč</i>&ldquo;. Podmětem věty je ale &bdquo;<i>ti dva a&nbsp;sporťák</i>&ldquo;, proto sem patří množné číslo."],
+    "options": [],
+    "options_luck": [],
+    "options_fight_skill": [],
+    "image": null,
+    "show_hud": true,
+    "life": "kill",
+    "stats": [{
+		"stat": "credits",
+		"mode": "set",
+		"value": [0, 0]
+	},{
+		"stat": "rockets",
+		"mode": "set",
+		"value": [0, 0]
+	},{
+		"stat": "nails",
+		"mode": "set",
+		"value": [0, 0]
+	},{
+		"stat": "oil",
+		"mode": "set",
+		"value": [0, 0]
+	},{
+		"stat": "wheels",
+		"mode": "set",
+		"value": [0, 0]
+	},{
+		"stat": "fuel",
+		"mode": "set",
+		"value": [0, 0]
+	}],
+    "equipment": {
+        "mode": "nothing",
+        "content": []
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "title_main": "48",
+    "title_middle": [],
+    "story": {
+        "always": [
+		{
+                "pre": true,
+                "post": true,
+                "content": ""
+            }
+			],
+        "survived": [],
+        "died": []
+    },
+    "notes": [],
+    "options": [
+        {
+            "node": "intro-1",
+            "description": "<i>Další stránka</i>",
+            "conditions": []
+        }
+    ],
+    "options_luck": [],
+    "options_fight_skill": [],
+    "image": null,
+    "show_hud": true,
+    "life": "nothing",
+    "stats": [],
+    "equipment": {
+        "mode": "nothing",
+        "content": []
+    }
+}

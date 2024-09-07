@@ -1,0 +1,38 @@
+{
+    "title_main": "302",
+    "title_middle": [],
+    "story": {
+        "always": [
+		{
+                "pre": true,
+                "post": true,
+                "content": "Otevřeš dveře a&nbsp;vystoupíš z&nbsp;Interceptoru. Když přistoupíš k&nbsp;dívce, zpoza jedné z&nbsp;pump vyskočí muž s&nbsp;vyholenou hlavou a&nbsp;v&nbsp;ruce drží páčidlo. &bdquo;Překvápko! Dej sem klíčky a&nbsp;prachy. Žádné hlouposti, jestli nechceš přijít k&nbsp;úrazu.&ldquo; Pokud mu chceš dát klíče od auta a&nbsp;kredity, otoč na <b>209</b>. Pokud na něj raději zaútočíš nožem, otoč na <b>48</b>."
+            }
+			],
+        "survived": [],
+        "died": []
+    },
+    "notes": [],
+    "options": [
+        {
+            "node": "209",
+            "description": "Odevzdat klíče a&nbsp;kredity",
+            "conditions": []
+        },
+        {
+            "node": "48",
+            "description": "Bojovat",
+            "conditions": []
+        }
+    ],
+    "options_luck": [],
+    "options_fight_skill": [],
+    "image": null,
+    "show_hud": true,
+    "life": "nothing",
+    "stats": [],
+    "equipment": {
+        "mode": "nothing",
+        "content": []
+    }
+}

@@ -255,9 +255,9 @@ if ($data->image != null) {
 }
 
 // Option links
-if ($_SESSION['alive']) {
-	echo "<div class=\"link-block\">\n";
+echo "<div class=\"link-block\">\n";
 
+if ($_SESSION['alive']) {
 	foreach($data->options as $i => $option) {
 		if (! conditions_met($option)) {
 			continue;
@@ -270,9 +270,13 @@ if ($_SESSION['alive']) {
 		echo "<a href=\"play.php?action=".($i + 1)."&node=".$_SESSION['node']."\">".$description."</a>\n";
 		echo "</div>\n\n";
 	}
-
+} else {
+	echo "<div class=\"link\">\n";
+	echo "<a href=\"index.php\">Přijmout porážku&nbsp;a vrátit se na úvodní stranu</a>\n";
 	echo "</div>\n\n";
 }
+
+echo "</div>\n\n";
 
 // Note
 foreach ($data->notes as $note) {
@@ -355,6 +359,11 @@ if ($data->show_hud) {
 	for ($i = 0; $i < $rockets; $i++) {
 		echo '<img class="rocket" src="images/rocket.png">';
 	}
+	
+	if ($rockets < 1) {
+		echo "žádné";
+	}
+	
 	echo "\n</div>\n\n";
 
 	// Nails
@@ -364,6 +373,11 @@ if ($data->show_hud) {
 	for ($i = 0; $i < $nails; $i++) {
 		echo '<img class="nails" src="images/nails.png">';
 	}
+	
+	if ($nails < 1) {
+		echo "žádné";
+	}
+	
 	echo "\n</div>\n\n";
 
 	// Oil
@@ -373,6 +387,11 @@ if ($data->show_hud) {
 	for ($i = 0; $i < $oil; $i++) {
 		echo '<img class="oil" src="images/oil.png">';
 	}
+	
+	if ($oil < 1) {
+		echo "žádný";
+	}
+	
 	echo "\n</div>\n\n";
 
 	// Wheels
@@ -382,6 +401,11 @@ if ($data->show_hud) {
 	for ($i = 0; $i < $wheels; $i++) {
 		echo '<img class="wheel" src="images/wheel.png">';
 	}
+	
+	if ($wheels < 1) {
+		echo "žádná";
+	}
+	
 	echo "\n</div>\n\n";
 
 	// Fuel
@@ -391,6 +415,11 @@ if ($data->show_hud) {
 	for ($i = 0; $i < $fuel; $i++) {
 		echo '<img class="canister" src="images/canister.png">';
 	}
+	
+	if ($fuel < 1) {
+		echo "žádné";
+	}
+	
 	echo "\n</div>\n";
 	
 	echo "</div>\n\n";
