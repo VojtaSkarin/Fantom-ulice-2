@@ -3,22 +3,14 @@
     "title_middle": [],
     "story": {
         "always": [
-		{
-                "pre": true,
-                "post": true,
-                "content": "Vezmeš za kliku a&nbsp;zatáhneš. Výbuch doprovázený jasným bílým zábleskem a&nbsp;ohlušující ranou tě odhodí zpět. Na dveřích byla nálož! Hoď jednou kostkou a&nbsp;výsledek odečti od své STAMINY."
-            }
-			],
-        "survived": [{
-                "pre": true,
-                "post": true,
-                "content": "Dveře jsou vyvrácené z&nbsp;pantů, ale v&nbsp;sanitce nikdo není. Její majitel je nejspíš na cestě sem, aby se podíval, kdo padl do jeho pasti. Cítíš se příliš slabý na to, aby ses dostal k&nbsp;Interceptoru, a&nbsp;rozhodneš se odplazit se do nějakého úkrytu. Pokud se chceš schovat v&nbsp;trávě, otoč na <b>182</b>. Pokud se chceš skrýt pod sanitkou, otoč na <b>356</b>."
-            }],
-        "died": [{
-                "pre": true,
-                "post": true,
-                "content": "Výbuch tě usmrtil."
-            }]
+            "Vezmeš za kliku a&nbsp;zatáhneš. Výbuch doprovázený jasným bílým zábleskem a&nbsp;ohlušující ranou tě odhodí zpět. Na dveřích byla nálož! Hoď jednou kostkou a&nbsp;výsledek odečti od své STAMINY."
+        ],
+        "survived": [
+            "Dveře jsou vyvrácené z&nbsp;pantů, ale v&nbsp;sanitce nikdo není. Její majitel je nejspíš na cestě sem, aby se podíval, kdo padl do jeho pasti. Cítíš se příliš slabý na to, aby ses dostal k&nbsp;Interceptoru, a&nbsp;rozhodneš se odplazit se do nějakého úkrytu. Pokud se chceš schovat v&nbsp;trávě, otoč na <b>182</b>. Pokud se chceš skrýt pod sanitkou, otoč na <b>356</b>."
+        ],
+        "died": [
+            "Výbuch tě usmrtil."
+        ]
     },
     "notes": [],
     "options": [
@@ -29,7 +21,7 @@
         },
         {
             "node": "356",
-            "description": "Skrýt se pod sanitku",
+            "description": "Skrýt se pod sanitkou",
             "conditions": []
         }
     ],
@@ -38,11 +30,16 @@
     "image": null,
     "show_hud": true,
     "life": "nothing",
-    "stats": [{
-		"stat": "stamina",
-		"mode": "substract",
-		"value": [1, 0]
-	}],
+    "stats": [
+        {
+            "stat": "stamina",
+            "mode": "substract",
+            "value": [
+                1,
+                0
+            ]
+        }
+    ],
     "equipment": {
         "mode": "nothing",
         "content": []

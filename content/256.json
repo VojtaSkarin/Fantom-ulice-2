@@ -3,25 +3,13 @@
     "title_middle": [],
     "story": {
         "always": [
-            {
-                "pre": true,
-                "post": false,
-                "content": "Ačkoli ošklivě krvácíš, podaří se ti dostat se ke svému autu. Ztrácíš další 1&nbsp;bod STAMINY."
-            }
+            "Ačkoli ošklivě krvácíš, podaří se ti dostat se ke svému autu. Ztrácíš další 1&nbsp;bod STAMINY."
         ],
         "survived": [
-            {
-                "pre": false,
-                "post": true,
-                "content": "Sesuneš se na sedadlo a&nbsp;otevřeš jeden z&nbsp;balíčků v&nbsp;Med-Kitu. Zanedlouho jsou tvé rány ošetřeny - vyjmeš broky, nastříkáš vrstvu syntetické pokožky a&nbsp;zakryješ obvazem. Když nastartuješ, pustíš spojku a&nbsp;vyjedeš z&nbsp;města, hned se cítíš lépe (otoč na <b>34</b>)."
-            }
+            "Sesuneš se na sedadlo a&nbsp;otevřeš jeden z&nbsp;balíčků v&nbsp;Med-Kitu. Zanedlouho jsou tvé rány ošetřeny - vyjmeš broky, nastříkáš vrstvu syntetické pokožky a&nbsp;zakryješ obvazem. Když nastartuješ, pustíš spojku a&nbsp;vyjedeš z&nbsp;města, hned se cítíš lépe (otoč na <b>34</b>)."
         ],
         "died": [
-            {
-                "pre": false,
-                "post": true,
-                "content": "Vykrvácel jsi."
-            }
+            "Vykrvácel jsi."
         ]
     },
     "notes": [],
@@ -41,19 +29,30 @@
         "mode": "nothing",
         "content": []
     },
-    "stats": [{
-		"stat": "stamina",
-		"mode": "substract",
-		"value": [0, 1]
-	},
-	{
-		"stat": "med_kit",
-		"mode": "substract",
-		"value": [0, 1]
-	},
-	{
-		"stat": "stamina",
-		"mode": "add",
-		"value": [0, 4]
-	}]
+    "stats": [
+        {
+            "stat": "stamina",
+            "mode": "substract",
+            "value": [
+                0,
+                1
+            ]
+        },
+        {
+            "stat": "med_kit",
+            "mode": "substract",
+            "value": [
+                0,
+                1
+            ]
+        },
+        {
+            "stat": "stamina",
+            "mode": "add",
+            "value": [
+                0,
+                4
+            ]
+        }
+    ]
 }

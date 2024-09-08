@@ -3,11 +3,7 @@
     "title_middle": [],
     "story": {
         "always": [
-            {
-                "pre": true,
-                "post": true,
-                "content": "Hoď dvěma kostkami. Pokud je výsledek menší nebo roven tvému UMĚNÍ BOJE, otoč na <b>57</b>. Pokud je výsledek větší než tvé UMĚNÍ BOJE, otoč na <b>86</b>."
-            }
+            "Hoď dvěma kostkami. Pokud je výsledek menší nebo roven tvému UMĚNÍ BOJE, otoč na <b>57</b>. Pokud je výsledek větší než tvé UMĚNÍ BOJE, otoč na <b>86</b>."
         ],
         "survived": [],
         "died": []

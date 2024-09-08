@@ -3,12 +3,8 @@
     "title_middle": [],
     "story": {
         "always": [
-		{
-                "pre": true,
-                "post": true,
-                "content": "K&nbsp;tvému velkému ulehčení jsi mířil přesně a&nbsp;pes je na místě mrtev. Otoč na <b>89</b>."
-            }
-			],
+            "K&nbsp;tvému velkému ulehčení jsi mířil přesně a&nbsp;pes je na místě mrtev. Otoč na <b>89</b>."
+        ],
         "survived": [],
         "died": []
     },

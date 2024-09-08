@@ -3,12 +3,8 @@
     "title_middle": [],
     "story": {
         "always": [
-		{
-                "pre": true,
-                "post": true,
-                "content": "Usoudíš, že toto město je příliš nebezpečné na to, abys v&nbsp;něm zůstával déle, a&nbsp;kulháš zpátky ke svému Interceptoru. Když nastartuješ, pustíš spojku a&nbsp;vyjedeš z&nbsp;města, hned se cítíš lépe (otoč na <b>34</b>)."
-            }
-			],
+            "Usoudíš, že toto město je příliš nebezpečné na to, abys v&nbsp;něm zůstával déle, a&nbsp;kulháš zpátky ke svému Interceptoru. Když nastartuješ, pustíš spojku a&nbsp;vyjedeš z&nbsp;města, hned se cítíš lépe (otoč na <b>34</b>)."
+        ],
         "survived": [],
         "died": []
     },

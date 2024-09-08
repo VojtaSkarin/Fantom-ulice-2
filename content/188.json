@@ -3,18 +3,15 @@
     "title_middle": [],
     "story": {
         "always": [
-		{
-                "pre": true,
-                "post": true,
-                "content": "Zastavíš Interceptor, aby sis prohlédl hořící vrak. Kdo byli ti lidé a&nbsp;proč na tebe bez varování zaútočili? Potřeseš hlavou a&nbsp;sešlápneš plyn, abys znovu vyrazil ke svému cíli. Projedeš kolem pancéřovaného bankovního auta a&nbsp;přemýšlíš o&nbsp;všech těch penězích uvnitř, které teď k&nbsp;ničemu nejsou<sup>1</sup>, když najednou praskání statické elektřiny ve tvém rádiu přeruší hlas. Je to jeden z&nbsp;vůdců New Hope. Sděluje ti, že na New Hope právě zaútočil gang motorkářů, kteří zabili osm lidí<sup>2</sup>. Po krátkém boji byli nakonec poraženi. Varuje tě, aby sis na ně dal pozor, protože unesli Sinclaira, předsedu městské rady. Vezmeš to na vědomí a&nbsp;rozloučíš se. Asi po hodině jízdy bez dalších komplikací zjišťuješ, že tvá zásoba paliva se tenčí - Interceptor má skutečně velkou spotřebu. Zastavíš, doplníš nádrž benzínem z&nbsp;kanystru a&nbsp;přitom si uvědomíš, že budeš muset brzy sehnat další benzín. O&nbsp;několik kilometrů dále se k&nbsp;tobě štěstí obrátí zády. Během pohromy tady muselo dojít k&nbsp;hromadné srážce aut, díky které se tu teď táhne dlouhý had opuštěných vozů. Rozhodně není možné jet po dálnici dál. Vrátíš se na poslední křižovatku a&nbsp;sjedeš z&nbsp;dálnice. Musíš se rozhodnout, kterým směrem se po silnici, která ji kříží, vydáš. Pokud chceš jet na východ, otoč na <b>341</b>. Pokud chceš jet na západ, otoč na <b>66</b>."
-            }
-			],
+            "Zastavíš Interceptor, aby sis prohlédl hořící vrak. Kdo byli ti lidé a&nbsp;proč na tebe bez varování zaútočili? Potřeseš hlavou a&nbsp;sešlápneš plyn, abys znovu vyrazil ke svému cíli. Projedeš kolem pancéřovaného bankovního auta a&nbsp;přemýšlíš o&nbsp;všech těch penězích uvnitř, které teď k&nbsp;ničemu nejsou<sup>1</sup>, když najednou praskání statické elektřiny ve tvém rádiu přeruší hlas. Je to jeden z&nbsp;vůdců New Hope. Sděluje ti, že na New Hope právě zaútočil gang motorkářů, kteří zabili osm lidí<sup>2</sup>. Po krátkém boji byli nakonec poraženi. Varuje tě, aby sis na ně dal pozor, protože unesli Sinclaira, předsedu městské rady. Vezmeš to na vědomí a&nbsp;rozloučíš se. Asi po hodině jízdy bez dalších komplikací zjišťuješ, že tvá zásoba paliva se tenčí - Interceptor má skutečně velkou spotřebu. Zastavíš, doplníš nádrž benzínem z&nbsp;kanystru a&nbsp;přitom si uvědomíš, že budeš muset brzy sehnat další benzín. O&nbsp;několik kilometrů dále se k&nbsp;tobě štěstí obrátí zády. Během pohromy tady muselo dojít k&nbsp;hromadné srážce aut, díky které se tu teď táhne dlouhý had opuštěných vozů. Rozhodně není možné jet po dálnici dál. Vrátíš se na poslední křižovatku a&nbsp;sjedeš z&nbsp;dálnice. Musíš se rozhodnout, kterým směrem se po silnici, která ji kříží, vydáš. Pokud chceš jet na východ, otoč na <b>341</b>. Pokud chceš jet na západ, otoč na <b>66</b>."
+        ],
         "survived": [],
         "died": []
     },
-    "notes": ["1. V českém překladu &bdquo;<i>které jsou teď k&nbsp;ničemu</i>&ldquo;. Čeština používá dvojitý zápor, vazba &bdquo;<i>být k ničemu</i>&ldquo; je frazém.",
-	"2. V českém překladu &bdquo;<i>zaútočil gang motorkářů a zabili osm lidí</i>&ldquo;. To je vyšinutí z větné vazby, podmět první věty (gang) se liší od podmětu věty druhé (motorkáři)."
-	],
+    "notes": [
+        "1. V českém překladu &bdquo;<i>které jsou teď k&nbsp;ničemu</i>&ldquo;. Čeština používá dvojitý zápor, vazba &bdquo;<i>být k ničemu</i>&ldquo; je frazém.",
+        "2. V českém překladu &bdquo;<i>zaútočil gang motorkářů a zabili osm lidí</i>&ldquo;. To je vyšinutí z větné vazby, podmět první věty (gang) se liší od podmětu věty druhé (motorkáři)."
+    ],
     "options": [
         {
             "node": "341",
@@ -32,11 +29,16 @@
     "image": null,
     "show_hud": true,
     "life": "nothing",
-    "stats": [{
-		"stat": "fuel",
-		"mode": "substract",
-		"value": [0, 1]
-	}],
+    "stats": [
+        {
+            "stat": "fuel",
+            "mode": "substract",
+            "value": [
+                0,
+                1
+            ]
+        }
+    ],
     "equipment": {
         "mode": "nothing",
         "content": []

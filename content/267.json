@@ -3,12 +3,8 @@
     "title_middle": [],
     "story": {
         "always": [
-		{
-                "pre": true,
-                "post": true,
-                "content": "Zaparkuješ Interceptor a&nbsp;jdeš zpátky k&nbsp;sanitce. Kabina řidiče je prázdná, ale zdá se, že sanitka sem přijela teprve nedávno. Pokud chceš otevřít zadní dveře a&nbsp;podívat se dovnitř, otoč na <b>195</b>. Pokud se raději vrátíš do Interceptoru a&nbsp;budeš pokračovat v&nbsp;cestě na východ, otoč na <b>22</b>."
-            }
-			],
+            "Zaparkuješ Interceptor a&nbsp;jdeš zpátky k&nbsp;sanitce. Kabina řidiče je prázdná, ale zdá se, že sanitka sem přijela teprve nedávno. Pokud chceš otevřít zadní dveře a&nbsp;podívat se dovnitř, otoč na <b>195</b>. Pokud se raději vrátíš do Interceptoru a&nbsp;budeš pokračovat v&nbsp;cestě na východ, otoč na <b>22</b>."
+        ],
         "survived": [],
         "died": []
     },

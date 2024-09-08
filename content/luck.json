@@ -23,9 +23,14 @@
         "mode": "nothing",
         "content": []
     },
-    "stats": [{
-		"stat": "luck",
-		"mode": "substract",
-		"value": [0, 1]
-	}]
+    "stats": [
+        {
+            "stat": "luck",
+            "mode": "substract",
+            "value": [
+                0,
+                1
+            ]
+        }
+    ]
 }

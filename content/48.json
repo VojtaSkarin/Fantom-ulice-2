@@ -3,12 +3,8 @@
     "title_middle": [],
     "story": {
         "always": [
-		{
-                "pre": true,
-                "post": true,
-                "content": ""
-            }
-			],
+            ""
+        ],
         "survived": [],
         "died": []
     },

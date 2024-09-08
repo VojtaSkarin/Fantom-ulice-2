@@ -3,25 +3,13 @@
     "title_middle": [],
     "story": {
         "always": [
-            {
-                "pre": true,
-                "post": false,
-                "content": "Ještě ani nestačíš vytáhnout revolver z&nbsp;pouzdra, když cizinec stiskne spoušť své brokovnice. Zahlédneš obláček dýmu a&nbsp;v&nbsp;tentýž okamžik ucítíš bolest v&nbsp;pravém stehně. Jsi vržen na zeď a&nbsp;když se hroutíš k&nbsp;zemi, zní ti v&nbsp;uších zvuk výstřelu. Hoď jednou kostkou, přičti 2 a&nbsp;výsledek odečti od své STAMINY."
-            }
+            "Ještě ani nestačíš vytáhnout revolver z&nbsp;pouzdra, když cizinec stiskne spoušť své brokovnice. Zahlédneš obláček dýmu a&nbsp;v&nbsp;tentýž okamžik ucítíš bolest v&nbsp;pravém stehně. Jsi vržen na zeď a&nbsp;když se hroutíš k&nbsp;zemi, zní ti v&nbsp;uších zvuk výstřelu. Hoď jednou kostkou, přičti 2 a&nbsp;výsledek odečti od své STAMINY."
         ],
         "survived": [
-            {
-                "pre": false,
-                "post": true,
-                "content": "Muž se otočí a&nbsp;odchází; nechává tě tu napospas psům. Pokud chceš použít Med-Kit a&nbsp;hned ošetřit své zranění, otoč na <b>38</b>. Pokud se chceš doplazit do bezpečí svého auta, otoč na <b>256</b>."
-            }
+            "Muž se otočí a&nbsp;odchází; nechává tě tu napospas psům. Pokud chceš použít Med-Kit a&nbsp;hned ošetřit své zranění, otoč na <b>38</b>. Pokud se chceš doplazit do bezpečí svého auta, otoč na <b>256</b>."
         ],
         "died": [
-            {
-                "pre": false,
-                "post": true,
-                "content": "Zásah z brokovnice tě usmrtil."
-            }
+            "Zásah z brokovnice tě usmrtil."
         ]
     },
     "notes": [],
@@ -56,9 +44,14 @@
         "mode": "nothing",
         "content": []
     },
-    "stats": [{
-		"stat": "stamina",
-		"mode": "substract",
-		"value": [1, 2]
-	}]
+    "stats": [
+        {
+            "stat": "stamina",
+            "mode": "substract",
+            "value": [
+                1,
+                2
+            ]
+        }
+    ]
 }

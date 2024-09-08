@@ -3,11 +3,7 @@
     "title_middle": [],
     "story": {
         "always": [
-            {
-                "pre": true,
-                "post": true,
-                "content": "Muž se na tebe podívá, odplivne si a&nbsp;vzkřikne: &bdquo;Povídám tas, ty špinavý vrahu!&ldquo; Nemáš na výběr, musíš ho poslechnout (otoč na <b>333</b>)."
-            }
+            "Muž se na tebe podívá, odplivne si a&nbsp;vzkřikne: &bdquo;Povídám tas, ty špinavý vrahu!&ldquo; Nemáš na výběr, musíš ho poslechnout (otoč na <b>333</b>)."
         ],
         "survived": [],
         "died": []
