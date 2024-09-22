@@ -4,20 +4,35 @@ html {
 	font-size: var(--font-size);
 }
 
+div.page {
+	max-width: var(--page-width);
+	margin: auto;
+}
+
+div.page-content {
+	width: 95%;
+	margin: auto;
+}
+
+div.image-label {
+	margin: auto;
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 75%;
+}
+
 div.title-main-1 {
 	text-align: center;
 	margin: auto;
 	margin-top: 0.5rem;
 	margin-bottom: 0.075rem;
 	font-size: 110%;
-	max-width: var(--page-width);
 }
 
 div.title-main-2 {
 	text-align: center;
 	margin: auto;
 	font-size: 170%;
-	max-width: var(--page-width);
 }
 
 div.title-main-3 {
@@ -25,7 +40,6 @@ div.title-main-3 {
 	margin: auto;
 	margin-bottom: 1rem;
 	font-size: 80%;
-	max-width: var(--page-width);
 }
 
 div.title-main {
@@ -35,13 +49,11 @@ div.title-main {
 	margin-bottom: 0.5rem;
 	font-weight: bold;
 	font-size: 150%;
-	max-width: var(--page-width);
 }
 
 div.title-middle {
 	text-align: center;
 	margin: auto;
-	max-width: var(--page-width);
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 }
@@ -49,7 +61,6 @@ div.title-middle {
 div.title-middle-greater {
 	text-align: center;
 	margin: auto;
-	max-width: var(--page-width);
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 	font-size: 110%;
@@ -58,21 +69,18 @@ div.title-middle-greater {
 div.title-justify {
 	text-align: justify;
 	margin: auto;
-	max-width: var(--page-width);
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 	font-size: 110%;
 }
 
 div.text {
-	max-width: var(--page-width);
 	margin: auto;
 	margin-bottom: 1rem;
 	text-align: justify;
 }
 
 div.note {
-	max-width: var(--page-width);
 	margin: auto;
 	margin-bottom: 1rem;
 	text-align: justify;
@@ -80,7 +88,6 @@ div.note {
 }
 
 div.text-choice {
-	max-width: var(--page-width);
 	margin: auto;
 	margin-top: 0.75rem;
 	text-align: justify;
@@ -91,22 +98,29 @@ div.link-block {
 }
 
 div.link {
-	max-width: var(--page-width);
 	margin: auto;
 	margin-bottom: 0.25rem;
 }
 
 div.stat-block {
-	max-width: var(--page-width);
 	margin: auto;
 	margin-bottom: 1rem;
+}
+
+div.visit-counter {
+	display: flex;
+	justify-content: center;
 }
 
 div.stat {
 }
 
+table {
+	width: 100%;
+	margin: auto;
+}
+
 table.header {
-	width: var(--page-width);
 	margin: auto;
 	font-size: var(--font-size);
 	text-align: center;
@@ -116,14 +130,12 @@ table.header {
 
 table.enemies {
 	table-layout: fixed;
-	width: var(--page-width);
 	margin: auto;
 	font-size: var(--font-size);
 	margin-bottom: 1rem;
 }
 
 table.target-choice {
-	width: var(--page-width);
 	margin: auto;
 	font-size: var(--font-size);
 	text-align: center;
@@ -150,12 +162,18 @@ td.align-right {
 }
 
 img.fullsize {
-	max-width: var(--page-width);
-	max-height: auto;
+	width: 100%;
 	display: block;
 	margin: auto;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+}
+
+img.qr {
+	width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 img.medkit {

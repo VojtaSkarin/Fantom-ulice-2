@@ -1,8 +1,12 @@
 <link rel="icon" href="images/ff-icon.png">
 <link rel="stylesheet" href="styles.css">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+<div class="page">
+<div class="page-content">
 
 <table class="header">
 <tr>

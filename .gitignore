@@ -1,3 +1,6 @@
 *.bak
 
 php.log
+
+test.html
+test.css

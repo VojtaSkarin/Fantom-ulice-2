@@ -13,12 +13,10 @@ Podpořte mě
 </div>
 
 <div class="text">
-Líbila se vám hra a chcete mě podpořit? Zprávy zasílejte na vojtaskaroupka@seznam.cz, finanční dary na 123/456.
+Líbila se vám hra a chcete mě podpořit? Zprávy zasílejte na vojtaskaroupka@seznam.cz, finanční dary na 1958469012/3030. Číslo účtu můžete načíst pomocí QR kódu níže.
 </div>
 
-<center>
-<img src="images/qr.jpg">
-</center>
+<img class="qr" src="images/qr.jpeg">
 
 <div class="title-main">
 Často kladené dotazy
