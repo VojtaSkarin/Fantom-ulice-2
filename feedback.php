@@ -7,9 +7,3 @@
 <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=0ab55d12ffb7f60ebadfdc9b25dace0fc64ddfaf'></script>
 <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1238202/t/6"></script>
 </div>
-
-</div>
-</div>
-
-</body>
-</html>

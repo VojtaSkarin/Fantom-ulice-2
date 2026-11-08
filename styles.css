@@ -1,91 +1,141 @@
+/* Page alignment */
 html {
-	--page-width: 24rem;
 	--font-size: 20;
 	font-size: var(--font-size);
 }
 
-div.page {
-	max-width: var(--page-width);
-	margin: auto;
+body {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
 }
 
-div.page-content {
-	width: 95%;
-	margin: auto;
+.page {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	
+	width: 24rem;
+	border: 1px solid green;
 }
 
-div.image-label {
-	margin: auto;
+.page-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	width: 95%;	
+	border: 1px solid red;
+}
+
+/* Signpost table */
+.signpost {
+	width: 100%;
+	
+	font-size: var(--font-size);
+	text-align: center;
 	margin-bottom: 1rem;
-	text-align: center;
-	font-size: 75%;
+	border: 1px solid;
 }
 
-div.title-main-1 {
-	text-align: center;
-	margin: auto;
-	margin-top: 0.5rem;
-	margin-bottom: 0.075rem;
-	font-size: 110%;
-}
-
-div.title-main-2 {
-	text-align: center;
-	margin: auto;
-	font-size: 170%;
-}
-
-div.title-main-3 {
-	text-align: center;
-	margin: auto;
-	margin-bottom: 1rem;
-	font-size: 80%;
-}
-
-div.title-main {
-	text-align: center;
-	margin: auto;
-	margin-top: 0.5rem;
+/* PAGE CONTENT */
+/* Title */
+.title-main {
 	margin-bottom: 0.5rem;
 	font-weight: bold;
 	font-size: 150%;
 }
 
-div.title-middle {
-	text-align: center;
-	margin: auto;
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-}
-
-div.title-middle-greater {
-	text-align: center;
-	margin: auto;
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
+.title-main-1 {
+	margin-bottom: 0.075rem;
 	font-size: 110%;
 }
 
-div.title-justify {
-	text-align: justify;
-	margin: auto;
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-	font-size: 110%;
+.title-main-2 {
+	font-size: 170%;
 }
 
-div.text {
-	margin: auto;
+.title-main-3 {
 	margin-bottom: 1rem;
-	text-align: justify;
+	font-size: 80%;
 }
 
-div.note {
-	margin: auto;
+.title-middle-greater {
+	margin-bottom: 0.5rem;
+	font-size: 110%;
+}
+
+.title-middle {
+	margin-bottom: 0.5rem;
+}
+
+.title-justify {
+	width: 100%;
+	text-align: justify;
+	margin-bottom: 0.5rem;
+	font-size: 110%;
+	
+	border: 1px solid green;
+}
+
+/* Text */
+.text {
+	text-align: justify;
+	margin-bottom: 1rem;
+	
+	border: 1px solid chocolate;
+}
+
+.note {
 	margin-bottom: 1rem;
 	text-align: justify;
 	font-size: 75%;
 }
+
+/* Image */
+.fullsize {
+	width: 100%;
+	margin-bottom: 1rem;
+	
+	border: 1px solid orange;
+}
+
+.image-label {
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 75%;
+	
+	border: 1px solid yellow;
+}
+
+img.qr {
+	margin-bottom: 0.5rem;
+	width: 50%;
+}
+
+/* Visit counter */
+.visit-counter {
+	display: flex;
+	justify-content: center;
+	
+	border: 1px solid yellow;
+}
+
+/* Option links */
+.link-block {
+	width: 100%;
+	margin-bottom: 2rem;
+	
+	border: 1px solid blue;
+}
+
+.link {
+	margin-bottom: 0.25rem;
+	
+	border: 1px solid red;
+}
+
+/*
 
 div.text-choice {
 	margin: auto;
@@ -93,23 +143,9 @@ div.text-choice {
 	text-align: justify;
 }
 
-div.link-block {
-	margin-bottom: 2rem;
-}
-
-div.link {
-	margin: auto;
-	margin-bottom: 0.25rem;
-}
-
 div.stat-block {
 	margin: auto;
 	margin-bottom: 1rem;
-}
-
-div.visit-counter {
-	display: flex;
-	justify-content: center;
 }
 
 div.stat {
@@ -118,14 +154,6 @@ div.stat {
 table {
 	width: 100%;
 	margin: auto;
-}
-
-table.header {
-	margin: auto;
-	font-size: var(--font-size);
-	text-align: center;
-	margin-bottom: 1rem;
-	border: 1px solid;
 }
 
 table.enemies {
@@ -159,21 +187,6 @@ td.align-center-shift-pancir {
 
 td.align-right {
 	text-align: right;
-}
-
-img.fullsize {
-	width: 100%;
-	display: block;
-	margin: auto;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
-
-img.qr {
-	width: 50%;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 img.medkit {
@@ -222,3 +235,4 @@ img.canister {
 	top: 0.3rem;
 	margin-left: 0.1rem;
 }
+*/
